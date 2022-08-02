@@ -4,4 +4,4 @@ export { FloatingItem } from './floating-item';
 export { FloatingPositions, FloatingUIModes, FloatingItemProps } from './floating-item-data';
 export { BannerManager, VisibilityMode, BannerState } from './banner-manager';
 export { LinkifyString } from './linkify-string';
-export { A11yWrapper } from './a11y-wrapper';
+export * from './a11y-wrapper';
