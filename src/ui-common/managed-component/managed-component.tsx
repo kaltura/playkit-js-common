@@ -1,7 +1,7 @@
-import {h, Component, ComponentChild, ComponentChildren} from 'preact';
+import { h, Component, ComponentChild, ComponentChildren } from 'preact';
 import * as styles from './_managed-component.scss';
 const {
-  redux: {connect},
+  redux: { connect }
 } = KalturaPlayer.ui;
 
 type ManagedComponentState = {
@@ -17,42 +17,35 @@ type ManagedComponentProps = {
 };
 
 const mapStateToProps = (state: Record<string, any>) => ({
-  playerSize: state.shell.playerSize,
+  playerSize: state.shell.playerSize
 });
-@connect(mapStateToProps, null, null, {forwardRef: true})
-export class ManagedComponent extends Component<
-  ManagedComponentProps,
-  ManagedComponentState
-> {
-
+@connect(mapStateToProps, null, null, { forwardRef: true })
+export class ManagedComponent extends Component<ManagedComponentProps, ManagedComponentState> {
   static defaultProps = {
-    fillContainer: false,
+    fillContainer: false
   };
 
   update() {
     this.setState((prev: ManagedComponentState) => {
       return {
-        toggler: !prev.toggler,
+        toggler: !prev.toggler
       };
     });
   }
 
   shouldComponentUpdate(prevProps: Readonly<ManagedComponentProps>): boolean {
-    const {updateOnPlayerSizeChanged, playerSize} = this.props;
-    return (
-      (updateOnPlayerSizeChanged && prevProps.playerSize !== playerSize) ||
-      prevProps.playerSize === playerSize
-    );
+    const { updateOnPlayerSizeChanged, playerSize } = this.props;
+    return (updateOnPlayerSizeChanged && prevProps.playerSize !== playerSize) || prevProps.playerSize === playerSize;
   }
 
   componentDidMount(): void {
     this.setState({
-      toggler: false,
+      toggler: false
     });
   }
 
   render() {
-    const {fillContainer, isShown, playerSize} = this.props;
+    const { fillContainer, isShown, playerSize } = this.props;
     if (!isShown()) {
       return null;
     }
@@ -60,10 +53,8 @@ export class ManagedComponent extends Component<
     return (
       <div
         data-contrib-item={this.props.label}
-        className={[
-          `${fillContainer ? styles.fillContainer : ''}`,
-          styles.inlineContainer,
-        ].join(' ')}>
+        className={[`${fillContainer ? styles.fillContainer : ''}`, styles.inlineContainer].join(' ')}
+      >
         {this.props.renderChildren(playerSize!)}
       </div>
     );

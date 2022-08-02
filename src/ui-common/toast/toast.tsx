@@ -1,6 +1,7 @@
-import {Component, h} from 'preact';
+import { Component, h } from 'preact';
 import * as styles from './_toast.scss';
-import {ToastSeverity} from '../toast-manager';
+import { ToastSeverity } from '../toast-manager';
+import { CloseIcon } from './close-icon';
 
 export interface ToastProps {
   id: string;
@@ -18,7 +19,7 @@ interface ToastState {
 
 export class Toast extends Component<ToastProps, ToastState> {
   state = {
-    isShown: true,
+    isShown: true
   };
 
   private _onClick = (e: any) => {
@@ -28,7 +29,7 @@ export class Toast extends Component<ToastProps, ToastState> {
 
   private _onClose = (e: any) => {
     e.stopPropagation();
-    this.setState({isShown: false});
+    this.setState({ isShown: false });
     this.props.onClose(this.props.id);
   };
 
@@ -47,13 +48,13 @@ export class Toast extends Component<ToastProps, ToastState> {
   }
 
   render() {
-    const {text, title, icon} = this.props;
+    const { text, title, icon } = this.props;
 
     return (
-      <div
-        className={styles.toastWrapper + ' ' + this._getToastSeverityClass()}
-        onClick={this._onClick}>
-        <button className={styles.closeButton} onClick={this._onClose}></button>
+      <div className={styles.toastWrapper + ' ' + this._getToastSeverityClass()} onClick={this._onClick}>
+        <button className={styles.closeButton} onClick={this._onClose}>
+          <CloseIcon />
+        </button>
         <div className={styles.title}>{title}</div>
         <div className={styles.toastBody}>
           <div className={styles.iconContainer}>

@@ -36,7 +36,7 @@
   object-fit: contain;
   background-repeat: no-repeat;
   border: none;
-  background-image: url("./assets/close.svg");
+  padding: 0;
 
   &:hover {
     cursor: pointer;

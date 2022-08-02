@@ -1,18 +1,16 @@
-import {Component, h} from 'preact';
-import {BannerContent} from '../banner-manager';
+import { Component, h } from 'preact';
+import { BannerContent } from '../banner-manager';
 import * as styles from './_banner.scss';
+import { SomeoneAsksLarge } from './someone-asks-large';
+import { SomeoneAsksSmall } from './someone-asks-small';
 
 export interface BannerProps {
   content: BannerContent;
 }
 
 export class Banner extends Component<BannerProps> {
-  render({content}: BannerProps) {
-    const {
-      text,
-      title = 'Audience asks:',
-      icon = this._defaultIcon(),
-    } = content;
+  render({ content }: BannerProps) {
+    const { text, title = 'Audience asks:', icon = this._defaultIcon() } = content;
 
     return (
       <div className={styles.defaultBannerRoot + ' ' + styles.bannerWrapper}>
@@ -28,6 +26,11 @@ export class Banner extends Component<BannerProps> {
   }
 
   private _defaultIcon() {
-    return <div className={styles.iconImage} />;
+    return (
+      <div className={styles.iconImage}>
+        <SomeoneAsksLarge className={styles.large} />
+        <SomeoneAsksSmall className={styles.small} />
+      </div>
+    );
   }
 }

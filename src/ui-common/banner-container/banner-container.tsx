@@ -1,5 +1,7 @@
-import {Component, h} from 'preact';
+import { Component, h } from 'preact';
 import * as styles from './_banner-container.scss';
+import { CloseSmall } from './close-small';
+import { CloseLarge } from './close-large';
 
 export interface BannerContainerProps {
   onClose: () => void;
@@ -12,9 +14,8 @@ interface BannerTheme {
 }
 
 export class BannerContainer extends Component<BannerContainerProps> {
-
   render(props: BannerContainerProps) {
-    const {backgroundColor, blur} = this.props.theme;
+    const { backgroundColor, blur } = this.props.theme;
 
     return (
       <div className={styles.bannerContainerRoot}>
@@ -23,8 +24,12 @@ export class BannerContainer extends Component<BannerContainerProps> {
                 background-color:${backgroundColor}; 
                 backdrop-filter: blur(${blur});
              `}
-          className={styles.bannerContainer}>
-          <button className={styles.closeButton} onClick={props.onClose} />
+          className={styles.bannerContainer}
+        >
+          <button className={styles.closeButton} onClick={props.onClose}>
+            <CloseSmall className={styles.small} />
+            <CloseLarge className={styles.large} />
+          </button>
           {this.props.children}
         </div>
       </div>
