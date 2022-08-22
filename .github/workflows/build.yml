@@ -1,12 +1,12 @@
 on:
   workflow_call:
-  inputs:
-      pluginPath:
-        description: "The folder name of the plugin"
-        required: true
-        type: string
-        default: true
- jobs:
+    inputs:
+        pluginPath:
+          description: "The folder name of the plugin"
+          required: true
+          type: string
+          default: true
+jobs:
   # This workflow contains a single job called "build"
   build:
     environment: build-plugins
