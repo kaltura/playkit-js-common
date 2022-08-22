@@ -43,6 +43,9 @@ jobs:
           export filePath="${{ inputs.pluginPath }}/$(cat VERSION.txt)"
           echo "$filePath"
           echo "::set-output name=filePath::$filePath"
+      - name: test params
+        run: |
+          echo ${{ secrets.ACCESS_SECRET }} , ${{ secrets.ACCESS }}
       - uses: aws-actions/configure-aws-credentials@v1
         name: Configure AWS credentials
         with:
