@@ -1,3 +1,8 @@
+
+# checking if a shared library has been changed
+concurrency:
+  group: ${{ github.ref }}
+
 on:
   workflow_call:
     inputs:
@@ -20,10 +25,10 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    environment: common
     runs-on: ubuntu-latest
-    run: |
-      echo ${{ inputs.pluginPath }}
-      echo ${{ inputs.accbucketess_key }}
-      echo ${{ inputs.access_key }}
-      echo ${{ inputs.access_secret }}
+    steps:
+      - run: |
+          echo ${{ inputs.pluginPath }}
+          echo ${{ inputs.accbucketess_key }}
+          echo ${{ inputs.access_key }}
+          echo ${{ inputs.access_secret }}
