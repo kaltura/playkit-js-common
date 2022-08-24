@@ -10,25 +10,14 @@ on:
           description: "The folder name of the plugin"
           required: true
           type: string
-        bucket:
-          description: "Bucket name"
-          required: true
-          type: string
-        access_key:
-          description: "Bucket name"
-          required: true
-          type: string
-        access_secret:
-          description: "Bucket name"
-          required: true
-          type: string
 jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - run: |
           echo ${{ inputs.pluginPath }}
-          echo ${{ inputs.accbucketess_key }}
-          echo ${{ inputs.access_key }}
-          echo ${{ inputs.access_secret }}
+          echo ${{ secrets.bucket }}
+          echo ${{ secrets.access_key }}
+          echo ${{ secrets.access_secret }}
