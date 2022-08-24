@@ -50,7 +50,7 @@ jobs:
         name: Configure AWS credentials
         with:
           aws-access-key-id: ${{ secret.access }}
-          aws-secret-access-key: ${{ secret.access_secret }}
+          aws-secret-access-key: ${{ secrets.access_secret }}
           aws-region: 'us-east-1'
       - name: Deploy
         run: |
