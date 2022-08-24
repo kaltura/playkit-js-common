@@ -5,18 +5,7 @@ on:
           description: "The folder name of the plugin"
           required: true
           type: string
-        bucket:
-          description: "Bucket name"
-          required: true
-          type: string
-        access_key:
-          description: "Bucket name"
-          required: true
-          type: string
-        access_secret:
-          description: "Bucket name"
-          required: true
-          type: string
+ 
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -60,11 +49,11 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         name: Configure AWS credentials
         with:
-          aws-access-key-id: ${{ inputs.access_key }}
-          aws-secret-access-key: ${{ inputs.access_secret }}
+          aws-access-key-id: ${{ secret.access }}
+          aws-secret-access-key: ${{ secret.access_secret }}
           aws-region: 'us-east-1'
       - name: Deploy
         run: |
-          export DESTINATION="s3://"${{ inputs.bucket }}"/"${{ steps.s3.outputs.filePath }}
+          export DESTINATION="s3://"${{ secret.bucket }}"/"${{ steps.s3.outputs.filePath }}
           echo $DESTINATION
           aws s3 sync ./dist $DESTINATION
