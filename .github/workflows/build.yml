@@ -15,7 +15,7 @@ jobs:
       - name: print event type 
         run: |
              echo "event name is:" ${{ github.event_name }} 
-             echo "event type is:" ${{ github.event.action }} 
+             
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -25,6 +25,14 @@ jobs:
           yarn install
       - name: versioning
         run: |
+          echo "Setting version perfix by event name:"  ${{ github.event_name }}
+          if [ ${{ github.event_name }} -eq "create" ] 
+          then 
+            export prefix="cannary"
+          else
+            export prefix="dev"
+          fi
+          echo "Prefix was set to" $prefix
           echo "Run standard-version"
           yarn run release --prerelease canary --skip.commit=true --skip.tag=true
           sha=$(git rev-parse --verify --short HEAD)
