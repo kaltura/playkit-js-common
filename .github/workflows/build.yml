@@ -12,6 +12,10 @@ jobs:
     environment: common
     runs-on: ubuntu-latest
     steps:
+      - name: print event type 
+        run: |
+             echo "event name is:" ${{ github.event_name }} 
+             echo "event type is:" ${{ github.event.action }} 
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
