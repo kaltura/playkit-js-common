@@ -7,7 +7,7 @@ export interface CuePoint<T> {
   text?: string;
 }
 
-interface TimedMetadataEvent {
+export interface TimedMetadataEvent {
   payload: {
     cues: Array<CuePoint<any>>;
   };
