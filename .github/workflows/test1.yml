@@ -1,0 +1,23 @@
+
+# checking if a shared library has been changed
+concurrency:
+  group: ${{ github.ref }}
+
+on:
+  workflow_call:
+    inputs:
+        pluginPath:
+          description: "The folder name of the plugin"
+          required: true
+          type: string
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          echo ${{ inputs.pluginPath }}
+          echo ${{ secrets.bucket }}
+          echo ${{ secrets.access_key }}
+          echo ${{ secrets.access_secret }}
