@@ -21,6 +21,8 @@ jobs:
              echo "event name is:" ${{ github.event_name }} 
              echo "Version perfix is:" ${{ inputs.prefix }}
       - uses: actions/checkout@v3
+      - name: print pwd
+        run: pwd
       - uses: actions/setup-node@v3
         with:
           node-version: 'v14.20.0'
