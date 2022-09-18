@@ -50,6 +50,10 @@ jobs:
           sed -iE "s/$currentVersion/$newVersion/g" CHANGELOG.md
       - name: build 
         run: yarn run build
+      - name: copy tranlation files 
+        run: |
+          mkdir ./dist/translations
+          cp ./translations/*.18n.json ./dist/translations/
       - name: push to S3
         id: s3
         run: |
