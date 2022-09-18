@@ -22,7 +22,9 @@ jobs:
              echo "Version perfix is:" ${{ inputs.prefix }}
       - uses: actions/checkout@v3
       - name: print pwd
-        run: pwd
+        run: |
+          pwd
+          ls -l
       - uses: actions/setup-node@v3
         with:
           node-version: 'v14.20.0'
