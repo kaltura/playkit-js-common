@@ -57,7 +57,7 @@ jobs:
       - name: copy tranlation files 
         run: |
           mkdir ./dist/translations
-          cp ./translations/*.18n.json ./dist/translations/
+          cp translations/* ./dist/translations/
       - name: push to S3
         id: s3
         run: |
