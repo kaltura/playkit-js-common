@@ -56,8 +56,10 @@ jobs:
         run: yarn run build
       - name: copy tranlation files 
         run: |
-          mkdir ./dist/translations
-          cp translations/* ./dist/translations/
+          if [ -d "translations" ]; then
+            mkdir ./dist/translations
+            cp translations/* ./dist/translations/          
+          fi
       - name: push to S3
         id: s3
         run: |
