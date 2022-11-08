@@ -15,6 +15,7 @@ export const A11yWrapper = ({ children, onClick }: A11yWrapperProps) => {
     onKeyDown: (e: KeyboardEvent) => {
       if ([SPACE, ENTER].includes(e.keyCode)) {
         e.preventDefault();
+        e.stopPropagation();
         onClick(e, true);
       }
     },
