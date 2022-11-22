@@ -5,3 +5,4 @@ export { FloatingPositions, FloatingUIModes, FloatingItemProps } from './floatin
 export { BannerManager, VisibilityMode, BannerState } from './banner-manager';
 export { LinkifyString } from './linkify-string';
 export * from './a11y-wrapper';
+export * from './input-field';
