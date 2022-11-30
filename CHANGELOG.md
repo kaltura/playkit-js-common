@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.12](https://github.com/kaltura/playkit-js-common/compare/v1.0.11...v1.0.12) (2022-11-30)
+
+
+### Bug Fixes
+
+* **FEV-1590:** handle up/down key pressed ([324cc9b](https://github.com/kaltura/playkit-js-common/commit/324cc9b04a9fe1040378e12823d5bd06abe58d62))
+
 ### [1.0.11](https://github.com/kaltura/playkit-js-common/compare/v1.0.10...v1.0.11) (2022-11-30)
 
 ### [1.0.10](https://github.com/kaltura/playkit-js-common/compare/v1.0.9...v1.0.10) (2022-11-30)
