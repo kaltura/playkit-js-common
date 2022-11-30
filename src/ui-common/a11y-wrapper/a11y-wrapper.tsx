@@ -1,6 +1,6 @@
 import { cloneElement, VNode } from 'preact';
 
-const { ENTER, SPACE } = KalturaPlayer.ui.utils.KeyMap;
+const { ENTER, SPACE, UP, DOWN } = KalturaPlayer.ui.utils.KeyMap;
 
 export type OnClickEvent = KeyboardEvent | MouseEvent;
 export type OnClick = (e: OnClickEvent, byKeyboard: boolean) => void;
@@ -8,15 +8,27 @@ export type OnClick = (e: OnClickEvent, byKeyboard: boolean) => void;
 interface A11yWrapperProps {
   children: VNode;
   onClick: OnClick;
+  onUpKeyPressed?: (e: KeyboardEvent) => void;
+  onDownKeyPressed?: (e: KeyboardEvent) => void;
 }
 
-export const A11yWrapper = ({ children, onClick }: A11yWrapperProps) => {
+const stopEvent = (e: KeyboardEvent) => {
+  e.preventDefault();
+  e.stopPropagation();
+};
+
+export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPressed }: A11yWrapperProps) => {
   return cloneElement(children, {
     onKeyDown: (e: KeyboardEvent) => {
       if ([SPACE, ENTER].includes(e.keyCode)) {
-        e.preventDefault();
-        e.stopPropagation();
+        stopEvent(e);
         onClick(e, true);
+      } else if (e.keyCode === UP && onUpKeyPressed) {
+        stopEvent(e);
+        onUpKeyPressed(e);
+      } else if (e.keyCode === DOWN && onDownKeyPressed) {
+        stopEvent(e);
+        onDownKeyPressed(e);
       }
     },
     onClick: (e: MouseEvent) => {
