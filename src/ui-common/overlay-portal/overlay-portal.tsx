@@ -5,6 +5,8 @@ const {
 } = KalturaPlayer.ui;
 const { createPortal } = KalturaPlayer.ui;
 
+const PORTAL_CLASS = '.overlay-portal';
+
 export interface OverlayPortalProps {
   children: VNode;
 }
@@ -12,7 +14,6 @@ export interface OverlayPortalProps {
 export const OverlayPortal = ({ children }: OverlayPortalProps) => {
   const targetId = useSelector((state: any) => state.config.targetId);
   const playerContainer: any = document.getElementById(targetId) || document;
-  const portalSelector = `.overlay-portal`;
 
-  return createPortal(children, playerContainer.querySelector(portalSelector)) as any; // createPortal has incorrect return type (void instead of VNode)
+  return createPortal(children, playerContainer.querySelector(PORTAL_CLASS));
 };
