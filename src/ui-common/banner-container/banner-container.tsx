@@ -18,7 +18,7 @@ export class BannerContainer extends Component<BannerContainerProps> {
     const { backgroundColor, blur } = this.props.theme;
 
     return (
-      <div className={styles.bannerContainerRoot}>
+      <div className={styles.bannerContainerRoot} aria-live="polite">
         <div
           style={`
                 background-color:${backgroundColor}; 

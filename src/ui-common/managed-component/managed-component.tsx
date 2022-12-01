@@ -52,7 +52,6 @@ export class ManagedComponent extends Component<ManagedComponentProps, ManagedCo
 
     return (
       <div
-        aria-live="true"
         data-contrib-item={this.props.label}
         className={[`${fillContainer ? styles.fillContainer : ''}`, styles.inlineContainer].join(' ')}
       >
