@@ -17,6 +17,12 @@ const stopEvent = (e: KeyboardEvent) => {
   e.stopPropagation();
 };
 
+export const isKeyboardEvent = (e: OnClickEvent): boolean => {
+  // space/enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
+  // check offsetX and offsetY to define keyboard event triggered by NVDA
+  return e instanceof KeyboardEvent || [e.offsetX, e.offsetY].every((offset) => offset === 0);
+};
+
 export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPressed }: A11yWrapperProps) => {
   return cloneElement(children, {
     onKeyDown: (e: KeyboardEvent) => {
@@ -32,10 +38,8 @@ export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPresse
       }
     },
     onClick: (e: MouseEvent) => {
-      // space/enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
-      const nvdaReaderEnabled = [e.offsetX, e.offsetY].every((offset) => offset === 0);
       e.stopPropagation();
-      onClick(e, nvdaReaderEnabled);
+      onClick(e, isKeyboardEvent(e));
     }
   });
 };
