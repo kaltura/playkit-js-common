@@ -1,6 +1,6 @@
 import { cloneElement, VNode } from 'preact';
 
-const { ENTER, SPACE, UP, DOWN } = KalturaPlayer.ui.utils.KeyMap;
+const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = KalturaPlayer.ui.utils.KeyMap;
 
 export type OnClickEvent = KeyboardEvent | MouseEvent;
 export type OnClick = (e: OnClickEvent, byKeyboard: boolean) => void;
@@ -10,6 +10,8 @@ interface A11yWrapperProps {
   onClick: OnClick;
   onUpKeyPressed?: (e: KeyboardEvent) => void;
   onDownKeyPressed?: (e: KeyboardEvent) => void;
+  onLeftKeyPressed?: (e: KeyboardEvent) => void;
+  onRightKeyPressed?: (e: KeyboardEvent) => void;
 }
 
 const stopEvent = (e: KeyboardEvent) => {
@@ -23,7 +25,7 @@ export const isKeyboardEvent = (e: OnClickEvent): boolean => {
   return e instanceof KeyboardEvent || [e.offsetX, e.offsetY].every((offset) => offset === 0);
 };
 
-export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPressed }: A11yWrapperProps) => {
+export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPressed, onLeftKeyPressed, onRightKeyPressed }: A11yWrapperProps) => {
   return cloneElement(children, {
     onKeyDown: (e: KeyboardEvent) => {
       if ([SPACE, ENTER].includes(e.keyCode)) {
@@ -35,6 +37,12 @@ export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPresse
       } else if (e.keyCode === DOWN && onDownKeyPressed) {
         stopEvent(e);
         onDownKeyPressed(e);
+      } else if (e.keyCode === LEFT && onLeftKeyPressed) {
+        stopEvent(e);
+        onLeftKeyPressed(e);
+      } else if (e.keyCode === RIGHT && onRightKeyPressed) {
+        stopEvent(e);
+        onRightKeyPressed(e);
       }
     },
     onClick: (e: MouseEvent) => {
