@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/kaltura/playkit-js-common/compare/v1.0.15...v1.0.16) (2022-12-08)
+
+
+### Bug Fixes
+
+* **FEV-1603:** handle left/right key pressed ([94e5d34](https://github.com/kaltura/playkit-js-common/commit/94e5d3447fa5df45794035c75a7c1adb9c8417b4))
+
 ### [1.0.15](https://github.com/kaltura/playkit-js-common/compare/v1.0.14...v1.0.15) (2022-12-07)
 
 ### [1.0.14](https://github.com/kaltura/playkit-js-common/compare/v1.0.13...v1.0.14) (2022-12-01)
