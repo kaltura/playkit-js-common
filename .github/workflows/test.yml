@@ -1,3 +1,6 @@
+on:
+  workflow_call:
+
 jobs:
   # This workflow contains a single job called "build"
   build:
