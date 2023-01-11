@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.18](https://github.com/kaltura/playkit-js-common/compare/v1.0.17...v1.0.18) (2023-01-11)
+
+
+### Bug Fixes
+
+* **FEV-1536:** change the width of the toast ([c938c45](https://github.com/kaltura/playkit-js-common/commit/c938c458e0694a623f339c61b37eec746668e7d1))
+
 ### [1.0.17](https://github.com/kaltura/playkit-js-common/compare/v1.0.16...v1.0.17) (2022-12-15)
 
 ### [1.0.16](https://github.com/kaltura/playkit-js-common/compare/v1.0.15...v1.0.16) (2022-12-08)
