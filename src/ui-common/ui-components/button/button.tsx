@@ -5,13 +5,13 @@ import * as styles from './button.scss';
 
 const { Tooltip } = KalturaPlayer.ui.components;
 
-enum Size {
+export enum ButtonSize {
   small = 'small',
   medium = 'medium',
   large = 'large'
 }
 
-enum Type {
+export enum ButtonType {
   primary = 'primary',
   danger = 'danger',
   translucent = 'translucent',
@@ -32,8 +32,8 @@ export interface ButtonProps {
   onClick: OnClick;
   className?: string;
   tooltip?: TooltipProps;
-  size?: Size;
-  type?: Type;
+  size?: ButtonSize;
+  type?: ButtonType;
 }
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
@@ -69,8 +69,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
 Button.defaultProps = {
   disabled: false,
   tabIndex: 0,
-  onClick: () => {},
   children: null,
-  size: Size.medium,
-  type: Type.primary
+  size: ButtonSize.medium,
+  type: ButtonType.primary
 };
