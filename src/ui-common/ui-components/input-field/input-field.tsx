@@ -1,5 +1,5 @@
 import { h, Component, Fragment } from 'preact';
-import { A11yWrapper } from '../a11y-wrapper';
+import { A11yWrapper } from '../../hoc/a11y-wrapper';
 import * as styles from './input-field.scss';
 
 export interface SearchResults {

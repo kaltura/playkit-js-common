@@ -1,4 +1,4 @@
-$roundness-1: 4px;
+@import '../variables.scss';
 
 .input-field-wrapper {
   ::-moz-placeholder {
@@ -51,16 +51,16 @@ $roundness-1: 4px;
     flex-shrink: 1;
     font-size: 15px;
     padding: 0 6px 1px 6px;
-    color: var(--playkit-tone-1-color);
+    color: $tone-1-color;
     background: transparent;
     border: none;
     overflow: hidden;
     text-overflow: ellipsis;
     &::placeholder {
-      color: var(--playkit-tone-2-color);
+      color: $tone-2-color;
     }
     &::selection {
-      background-color: var(--playkit-primary-brighter-color);
+      background-color: $primary-brighter-color;
     }
   }
   .clear-icon {
@@ -76,11 +76,11 @@ $roundness-1: 4px;
     cursor: pointer;
   }
   &:hover {
-    border-color: #ffffff;
+    border-color: $white;
   }
   &.active {
-    color: var(--playkit-tone-2-color);
-    background: var(--playkit-tone-8-color);
-    border-color: #ffffff;
+    color: $tone-2-color;
+    background: $tone-8-color;
+    border-color: $white;
   }
 }

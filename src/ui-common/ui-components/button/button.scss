@@ -1,0 +1,80 @@
+@import '../variables.scss';
+
+// https://www.figma.com/file/GYMv1jsthckOnKmCrdQJY3/%E2%8F%AF-Player-v7-(Guidelines)?node-id=21%3A1943&t=ywdMo875C6kzd7pN-0
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: $roundness-1;
+  cursor: pointer;
+  &.primary {
+    background-color: $primary-color;
+    color: $primary-text-contrast-color;
+    &:not(.disabled) {
+      &:hover {
+        background-color: $primary-darker-color;
+      }
+      &:active {
+        background-color: $primary-brighter-color;
+      }
+    }
+  }
+  &.danger {
+    background-color: $danger-color;
+    color: $danger-text-contrast-color;
+    &:not(.disabled) {
+      &:hover {
+        background-color: $danger-darker-color;
+      }
+      &:active {
+        background-color: $danger-brighter-color;
+      }
+    }
+  }
+  &.translucent {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: $primary-text-contrast-color;
+  }
+  &.borderless {
+    background-color: transparent;
+    color: $tone-1-color;
+    &:not(.disabled) {
+      &:hover {
+        background-color: $tone-4-color;
+      }
+      &:active {
+        background-color: $tone-6-color;
+      }
+    }
+  }
+  &.small {
+    height: 24px;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 0 4px;
+  }
+  &.medium {
+    height: 32px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 0 8px;
+  }
+  .large {
+    height: 40px;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0 16px;
+  }
+  &.disabled {
+    background-color: transparent;
+    color: $tone-4-color;
+    border-color: $tone-4-color;
+    cursor: default;
+  }
+  &:focus {
+    background-color: $primary-brighter-color;
+    box-shadow: 0px 0px 0px 1px $primary-color;
+  }
+}
