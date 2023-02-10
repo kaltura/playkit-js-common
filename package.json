@@ -48,7 +48,6 @@
     "babel-loader": "^8.2.4",
     "classnames": "^2.3.2",
     "copy-webpack-plugin": "^11.0.0",
-    "core-js": "^3.27.2",
     "css-loader": "^6.7.1",
     "gh-pages": "^5.0.0",
     "kaltura-player-js": "https://github.com/kaltura/kaltura-player-js.git#master",
