@@ -12,6 +12,7 @@ interface A11yWrapperProps {
   onDownKeyPressed?: (e: KeyboardEvent) => void;
   onLeftKeyPressed?: (e: KeyboardEvent) => void;
   onRightKeyPressed?: (e: KeyboardEvent) => void;
+  role?: string;
 }
 
 const stopEvent = (e: KeyboardEvent) => {
@@ -25,7 +26,15 @@ export const isKeyboardEvent = (e: OnClickEvent): boolean => {
   return e instanceof KeyboardEvent || [e.offsetX, e.offsetY].every((offset) => offset === 0);
 };
 
-export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPressed, onLeftKeyPressed, onRightKeyPressed }: A11yWrapperProps) => {
+export const A11yWrapper = ({
+  children,
+  onClick,
+  onUpKeyPressed,
+  onDownKeyPressed,
+  onLeftKeyPressed,
+  onRightKeyPressed,
+  role
+}: A11yWrapperProps) => {
   return cloneElement(children, {
     onKeyDown: (e: KeyboardEvent) => {
       if ([SPACE, ENTER].includes(e.keyCode)) {
@@ -48,6 +57,11 @@ export const A11yWrapper = ({ children, onClick, onUpKeyPressed, onDownKeyPresse
     onClick: (e: MouseEvent) => {
       e.stopPropagation();
       onClick(e, isKeyboardEvent(e));
-    }
+    },
+    role
   });
+};
+
+A11yWrapper.defaultProps = {
+  role: 'button'
 };
