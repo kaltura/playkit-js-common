@@ -44,7 +44,7 @@ const Template = (args: InputFieldProps) => {
             value={'${args.value}'}
             onChange={(value: string) => {}}
             placeholder={'${args.placeholder}'}
-            clearSearchLabel={${args.clearSearchLabel ? 'Clear' : 'null'}}
+            clearSearchLabel={${args.clearSearchLabel ? "'Clear'" : 'null'}}
             searchResults={${
               args.searchResults
                 ? `{
