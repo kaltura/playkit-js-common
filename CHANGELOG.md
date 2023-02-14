@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/kaltura/playkit-js-common/compare/v1.0.18...v1.1.0) (2023-02-14)
+
+
+### Features
+
+* **FEV-1566:** button component ([e43d1b6](https://github.com/kaltura/playkit-js-common/commit/e43d1b6acfdb9481fe7d57f25cf9a8d1375aa909))
+* **FEV-1566:** fixed styles ([e455306](https://github.com/kaltura/playkit-js-common/commit/e4553061be63a1c93fe885fe485789402f5810ec))
+
 ### [1.0.18](https://github.com/kaltura/playkit-js-common/compare/v1.0.17...v1.0.18) (2023-01-11)
 
 
