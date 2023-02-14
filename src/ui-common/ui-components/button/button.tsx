@@ -21,6 +21,7 @@ export enum ButtonType {
 export interface TooltipProps {
   label: string;
   className?: string;
+  type?: string;
 }
 
 export interface ButtonProps {

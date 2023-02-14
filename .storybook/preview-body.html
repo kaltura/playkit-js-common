@@ -1,0 +1,20 @@
+<div id='player-placeholder'></div>
+<script>
+    var config = {
+        targetId: 'player-placeholder',
+        provider: {
+            partnerId: 1091,
+            env: {
+                cdnUrl: 'https://qa-apache-php7.dev.kaltura.com/',
+                serviceUrl: 'https://qa-apache-php7.dev.kaltura.com/api_v3'
+            }
+        }
+    };
+
+    try {
+        var kalturaPlayer = KalturaPlayer.setup(config);
+        kalturaPlayer.loadMedia({ entryId: '0_wifqaipd' });
+    } catch (e) {
+        console.error(e.message);
+    }
+</script>

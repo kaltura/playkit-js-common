@@ -1,13 +1,13 @@
 <script src="./kaltura-player/kaltura-ovp-player.js"></script>
-<script>
-    setTimeout(function () {
-        // apply style variables
-        document.body.classList.add("playkit-player");
-        document.body.style.backgroundColor = "rgba(0,0,0,0.7)"
-        document.body.style.display = "flex"
-        document.body.style.alignItems = "center"
-        document.body.style.justifyContent = "center"
-        document.body.style.height = "100vh"
-        document.body.style.cursor = "default"
-    });
-</script>
+<style>
+    #player-placeholder {
+        width: 640px;
+        height: 360px;
+    }
+
+    #player-placeholder.out-of-view {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        top: 95vh;
+    }
+</style>

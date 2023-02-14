@@ -35,5 +35,10 @@ module.exports = async ({ mode, config }) => {
             ],
         })
     );
+    config.externals = {
+        ...config.externals,
+        'kaltura-player-js': 'root KalturaPlayer',
+        preact: 'root KalturaPlayer.ui.preact'
+    }
     return config;
 };

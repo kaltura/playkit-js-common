@@ -1,10 +1,12 @@
 import { h } from 'preact';
 import { Button, ButtonProps, ButtonSize, ButtonType } from '../ui-common/ui-components';
+import { Wrapper } from './Wrapper';
 
 export default {
   title: 'Button',
   component: Button,
   argTypes: {
+    onClick: { action: 'clicked' },
     type: {
       control: false
     },
@@ -14,7 +16,6 @@ export default {
       control: { type: 'select' }
     },
     children: {
-      name: 'label',
       control: {
         type: 'text'
       }
@@ -23,10 +24,48 @@ export default {
       defaultValue: false,
       control: 'boolean'
     }
+  },
+  parameters: {
+    previewTabs: {
+      'storybook/docs/panel': { hidden: true }
+    }
   }
 };
 
-const Template = (args: ButtonProps) => <Button {...args} onClick={() => alert('Click!')} />;
+let overlay = () => {};
+const Template = (args: ButtonProps) => {
+  overlay();
+  overlay = (window as any).kalturaPlayer.ui.addComponent({
+    label: 'story-book-overlay',
+    presets: ['Playback'],
+    container: 'GuiArea',
+    replaceComponent: KalturaPlayer.ui.components.PrePlaybackPlayOverlay.displayName,
+    get: () => (
+      <Wrapper>
+        <Button {...args} />
+      </Wrapper>
+    )
+  });
+  return (
+    <pre>
+      <code class="language-html">
+        {`
+          import {Button, OnClickEvent} from '@playkit-js/common';
+          ...
+          <Button
+            type={'${args.type}'}
+            size={'${args.size}'}
+            disabled={${args.disabled}}
+            onClick={(e: OnClickEvent, byKeyboard: boolean) => {}}
+            tooltip={${args.tooltip ? '{ label: Tooltip }' : 'null'}}
+          >
+            ${args.children}
+          </Button>
+        `}
+      </code>
+    </pre>
+  );
+};
 
 export const Primary: any = Template.bind({});
 Primary.args = { type: ButtonType.primary, children: 'Primary' };
@@ -35,4 +74,6 @@ Danger.args = { type: ButtonType.danger, children: 'Danger' };
 export const Translucent: any = Template.bind({});
 Translucent.args = { type: ButtonType.translucent, children: 'Translucent' };
 export const Borderless: any = Template.bind({});
-Borderless.args = { type: ButtonType.borderless, children: 'Borderless' };
+Borderless.args = { type: ButtonType.borderless, children: 'Borderless', tooltip: null };
+export const WithTooltip: any = Template.bind({});
+WithTooltip.args = { type: ButtonType.primary, children: 'Hover on button', tooltip: { label: 'Tooltip' } };
