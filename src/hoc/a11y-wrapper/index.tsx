@@ -66,7 +66,7 @@ export const A11yWrapper = ({
     props.type = type || 'button';
   }
 
-  return cloneElement(children, props) as any;
+  return cloneElement(children, props);
 };
 
 A11yWrapper.defaultProps = {

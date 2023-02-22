@@ -6,8 +6,7 @@
   "types": "dist/index.d.ts",
   "homepage": "http://kaltura.github.io/playkit-js-common",
   "files": [
-    "dist/",
-    "lib/"
+    "dist/"
   ],
   "license": "Apache-2.0",
   "repository": {
