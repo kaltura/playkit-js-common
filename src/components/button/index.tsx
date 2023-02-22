@@ -1,7 +1,7 @@
 import { h, ComponentChild, FunctionComponent } from 'preact';
 import * as classnames from 'classnames';
 import { A11yWrapper, OnClick } from '../../hoc/a11y-wrapper';
-import * as styles from './button.scss';
+import * as styles from './Button.scss';
 
 const { Tooltip } = KalturaPlayer.ui.components;
 

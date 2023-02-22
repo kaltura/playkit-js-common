@@ -1,6 +1,6 @@
 import { h, Component, Fragment } from 'preact';
 import { A11yWrapper } from '../../hoc/a11y-wrapper';
-import * as styles from './input-field.scss';
+import * as styles from './InputField.scss';
 
 export interface SearchResults {
   activeSearchIndex: number;
