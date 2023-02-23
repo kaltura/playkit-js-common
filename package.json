@@ -22,6 +22,7 @@
     "clean": "rm -rf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc",
+    "build:commonjs": "npm run clean && webpack --mode production",
     "postbuild": "copyfiles -u 1 \"src/**/*.scss\" dist",
     "dev": "watch 'npm run build' src",
     "test": "jest",
