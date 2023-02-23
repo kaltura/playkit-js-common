@@ -35,8 +35,8 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
     };
   }
 
-  public setFocus = () => {
-    this._inputRef?.focus();
+  public setFocus = (options?: FocusOptions) => {
+    this._inputRef?.focus(options);
   };
 
   private _handleOnChange = (e: any) => {
