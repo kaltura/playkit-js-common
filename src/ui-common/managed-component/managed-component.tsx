@@ -51,10 +51,7 @@ export class ManagedComponent extends Component<ManagedComponentProps, ManagedCo
     }
 
     return (
-      <div
-        data-contrib-item={this.props.label}
-        className={[`${fillContainer ? styles.fillContainer : ''}`, styles.inlineContainer].join(' ')}
-      >
+      <div data-contrib-item={this.props.label} className={`${fillContainer ? styles.fillContainer : ''}`}>
         {this.props.renderChildren(playerSize!)}
       </div>
     );

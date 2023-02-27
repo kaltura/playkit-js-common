@@ -1,6 +1,8 @@
 import { h } from 'preact';
-import { Button, ButtonProps, ButtonSize, ButtonType } from '../ui-common/ui-components';
-import { Wrapper } from './Wrapper';
+import { Button, ButtonProps, ButtonSize, ButtonType } from './index';
+import { OverlayPortal } from '../../hoc/overlay-portal';
+
+const { Overlay } = KalturaPlayer.ui.components;
 
 export default {
   title: 'Button',
@@ -41,9 +43,13 @@ const Template = (args: ButtonProps) => {
     container: 'GuiArea',
     replaceComponent: KalturaPlayer.ui.components.PrePlaybackPlayOverlay.displayName,
     get: () => (
-      <Wrapper>
-        <Button {...args} />
-      </Wrapper>
+      <OverlayPortal>
+        <Overlay open permanent>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+            <Button {...args} />
+          </div>
+        </Overlay>
+      </OverlayPortal>
     )
   });
   return (

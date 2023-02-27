@@ -1,6 +1,8 @@
 import { h } from 'preact';
-import { InputField, InputFieldProps } from '../ui-common/ui-components';
-import { Wrapper } from './Wrapper';
+import { InputField, InputFieldProps } from './index';
+import { OverlayPortal } from '../../hoc/overlay-portal';
+
+const { Overlay } = KalturaPlayer.ui.components;
 
 export default {
   title: 'InputField',
@@ -29,9 +31,13 @@ const Template = (args: InputFieldProps) => {
     container: 'GuiArea',
     replaceComponent: KalturaPlayer.ui.components.PrePlaybackPlayOverlay.displayName,
     get: () => (
-      <Wrapper>
-        <InputField {...args} />
-      </Wrapper>
+      <OverlayPortal>
+        <Overlay open permanent>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+            <InputField {...args} />
+          </div>
+        </Overlay>
+      </OverlayPortal>
     )
   });
   return (

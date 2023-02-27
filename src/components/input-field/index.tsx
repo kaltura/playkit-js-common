@@ -1,6 +1,6 @@
 import { h, Component, Fragment } from 'preact';
 import { A11yWrapper } from '../../hoc/a11y-wrapper';
-import * as styles from './input-field.scss';
+import * as styles from './InputField.scss';
 
 export interface SearchResults {
   activeSearchIndex: number;
@@ -35,8 +35,8 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
     };
   }
 
-  public setFocus = () => {
-    this._inputRef?.focus();
+  public setFocus = (options?: FocusOptions) => {
+    this._inputRef?.focus(options);
   };
 
   private _handleOnChange = (e: any) => {
