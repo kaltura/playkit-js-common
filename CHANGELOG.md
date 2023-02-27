@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/kaltura/playkit-js-common/compare/v1.1.1...v1.1.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* **components:** fix setFocus method ([6cd47f1](https://github.com/kaltura/playkit-js-common/commit/6cd47f1a45a342e350869993af1332e9ec93f2ad))
+
 ### [1.1.1](https://github.com/kaltura/playkit-js-common/compare/v1.1.0...v1.1.1) (2023-02-20)
 
 ## [1.1.0](https://github.com/kaltura/playkit-js-common/compare/v1.0.18...v1.1.0) (2023-02-14)
