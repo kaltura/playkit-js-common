@@ -48,12 +48,12 @@
     "@types/linkify-it": "^3.0.2",
     "@types/node": "^14.11.2",
     "babel-loader": "^8.2.4",
-    "classnames": "^2.3.2",
     "copy-webpack-plugin": "^11.0.0",
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "gh-pages": "^5.0.0",
     "kaltura-player-js": "https://github.com/kaltura/kaltura-player-js.git#master",
+    "preact": "^10.13.0",
     "prettier": "^2.8.4",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "@playkit-js/playkit-js-ui": "^0.74.0",
+    "classnames": "^2.3.2",
     "linkify-it": "^4.0.1"
   }
 }
