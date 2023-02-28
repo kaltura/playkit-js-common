@@ -1,6 +1,6 @@
 import { cloneElement, VNode } from 'preact';
-
-const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = KalturaPlayer.ui.utils.KeyMap;
+import { ui } from 'kaltura-player-js';
+const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = ui.utils.KeyMap;
 
 export type OnClickEvent = KeyboardEvent | MouseEvent;
 export type OnClick = (e: OnClickEvent, byKeyboard: boolean) => void;
@@ -39,7 +39,7 @@ export const A11yWrapper = ({
 }: A11yWrapperProps) => {
   const props: Record<string, unknown> = {
     onKeyDown: (e: KeyboardEvent) => {
-      if ([SPACE, ENTER].includes(e.keyCode)) {
+      if (e.keyCode === SPACE || e.keyCode === ENTER) {
         stopEvent(e);
         onClick(e, true);
       } else if (e.keyCode === UP && onUpKeyPressed) {
