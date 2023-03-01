@@ -1,0 +1,43 @@
+on:
+  workflow_call:
+
+jobs:
+  cross-browser-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5
+        with:
+          # install WebKit browser dependencies
+          build: npx playwright install-deps webkit
+          runTests: false
+      - name: Build
+        run: yarn run test:prepare
+      - name: E2E on Chrome
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          config: video=false
+          browser: chrome
+      - name: E2E on Firefox
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          config: video=false
+          browser: firefox
+      - name: E2E on Edge
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          config: video=false
+          browser: edge
+      - name: E2E on Safari
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          config: video=false
+          browser: webkit
