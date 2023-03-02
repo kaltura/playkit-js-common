@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   font-weight: 700;
   border: 1px solid transparent;
   border-radius: $roundness-1;
@@ -54,18 +55,42 @@
     font-size: 13px;
     line-height: 16px;
     padding: 0 4px;
+    &.withIcon {
+      padding-right: 8px;
+      > span {
+        margin-left: 2px;
+      }
+    }
   }
   &.medium {
     height: 32px;
     font-size: 14px;
     line-height: 17px;
     padding: 0 8px;
+    &.withIcon {
+      padding-right: 12px;
+      > span {
+        margin-left: 4px;
+      }
+    }
+    &.iconOnly {
+      padding: 0 4px;
+    }
   }
   &.large {
     height: 40px;
     font-size: 16px;
     line-height: 19px;
     padding: 0 16px;
+    &.withIcon {
+      padding-left: 12px;
+      > span {
+        margin-left: 4px;
+      }
+    }
+    &.iconOnly {
+      padding: 0 4px;
+    }
   }
   &.disabled {
     background-color: transparent;
