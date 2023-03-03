@@ -2,7 +2,7 @@ import { h, ComponentChild, FunctionComponent, Fragment } from 'preact';
 import * as classnames from 'classnames';
 import { ui } from 'kaltura-player-js';
 import { A11yWrapper, OnClick } from '../../hoc/a11y-wrapper';
-import { Icon, IconSize } from '../../icons/Icon';
+import { Icon, IconSize } from '../../icon';
 import * as styles from './Button.scss';
 
 const { Tooltip } = ui.Components;
@@ -29,7 +29,7 @@ export interface TooltipProps {
 export interface ButtonProps {
   testId?: string; // uniq data-testid attribute for e2e tests
   children?: ComponentChild;
-  icon?: string;
+  icon?: string | null;
   disabled?: boolean;
   tabIndex?: number;
   ariaLabel?: string;
@@ -82,5 +82,6 @@ Button.defaultProps = {
   tabIndex: 0,
   children: null,
   size: ButtonSize.medium,
+  icon: null,
   type: ButtonType.primary
 };

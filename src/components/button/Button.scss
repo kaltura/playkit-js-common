@@ -61,6 +61,9 @@
         margin-left: 2px;
       }
     }
+    &.iconOnly {
+      padding: 0 3px;
+    }
   }
   &.medium {
     height: 32px;
@@ -74,7 +77,7 @@
       }
     }
     &.iconOnly {
-      padding: 0 4px;
+      padding: 0 3px;
     }
   }
   &.large {
@@ -89,7 +92,7 @@
       }
     }
     &.iconOnly {
-      padding: 0 4px;
+      padding: 0 3px;
     }
   }
   &.disabled {
