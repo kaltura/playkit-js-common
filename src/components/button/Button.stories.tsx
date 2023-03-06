@@ -1,16 +1,21 @@
 import { h } from 'preact';
-import { Button, ButtonProps, ButtonSize, ButtonType } from './index';
+import { ui } from 'kaltura-player-js';
+import { Button as ButtonComponent, ButtonProps, ButtonSize, ButtonType } from './index';
 import { OverlayPortal } from '../../hoc/overlay-portal';
+import {Icons} from "../../icon/icons";
 
-const { Overlay } = KalturaPlayer.ui.components;
+//@ts-ignore
+const { Overlay } = ui.Components;
 
 export default {
   title: 'Button',
-  component: Button,
+  component: ButtonComponent,
   argTypes: {
     onClick: { action: 'clicked' },
     type: {
-      control: false
+      options: [ButtonType.primary, ButtonType.danger, ButtonType.translucent, ButtonType.borderless],
+      defaultValue: ButtonType.primary,
+      control: { type: 'select' }
     },
     size: {
       options: [ButtonSize.small, ButtonSize.medium, ButtonSize.large],
@@ -25,6 +30,11 @@ export default {
     disabled: {
       defaultValue: false,
       control: 'boolean'
+    },
+    icon: {
+      options: [null, ...Object.keys(Icons)],
+      defaultValue: null,
+      control: { type: 'select' }
     }
   },
   parameters: {
@@ -41,12 +51,13 @@ const Template = (args: ButtonProps) => {
     label: 'story-book-overlay',
     presets: ['Playback'],
     container: 'GuiArea',
-    replaceComponent: KalturaPlayer.ui.components.PrePlaybackPlayOverlay.displayName,
+    //@ts-ignore
+    replaceComponent: ui.Components.PrePlaybackPlayOverlay.displayName,
     get: () => (
       <OverlayPortal>
         <Overlay open permanent>
           <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-            <Button {...args} />
+            <ButtonComponent {...args} />
           </div>
         </Overlay>
       </OverlayPortal>
@@ -56,7 +67,7 @@ const Template = (args: ButtonProps) => {
     <pre>
       <code class="language-html">
         {`
-          import {Button, OnClickEvent} from '@playkit-js/common';
+          import {Button, OnClickEvent} from '@playkit-js/common/dist/components/button';
           ...
           <Button
             type={'${args.type}'}
@@ -64,8 +75,9 @@ const Template = (args: ButtonProps) => {
             disabled={${args.disabled}}
             onClick={(e: OnClickEvent, byKeyboard: boolean) => {}}
             tooltip={${args.tooltip ? '{ label: Tooltip }' : 'null'}}
+            icon={${args.icon ? `'${args.icon}'` : 'null'}}
           >
-            ${args.children}
+            ${args.children || ""}
           </Button>
         `}
       </code>
@@ -73,13 +85,11 @@ const Template = (args: ButtonProps) => {
   );
 };
 
-export const Primary: any = Template.bind({});
-Primary.args = { type: ButtonType.primary, children: 'Primary' };
-export const Danger: any = Template.bind({});
-Danger.args = { type: ButtonType.danger, children: 'Danger' };
-export const Translucent: any = Template.bind({});
-Translucent.args = { type: ButtonType.translucent, children: 'Translucent' };
-export const Borderless: any = Template.bind({});
-Borderless.args = { type: ButtonType.borderless, children: 'Borderless', tooltip: null };
+export const Button: any = Template.bind({});
+Button.args = { type: ButtonType.primary, children: 'Button' };
 export const WithTooltip: any = Template.bind({});
 WithTooltip.args = { type: ButtonType.primary, children: 'Hover on button', tooltip: { label: 'Tooltip' } };
+export const WithIcon: any = Template.bind({});
+WithIcon.args = { type: ButtonType.primary, children: 'With Icon', icon: 'close' };
+export const IconOnly: any = Template.bind({});
+IconOnly.args = { type: ButtonType.primary, icon: 'close', tooltip: { label: 'Tooltip' } };

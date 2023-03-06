@@ -44,7 +44,7 @@ const Template = (args: InputFieldProps) => {
     <pre>
       <code class="language-html">
         {`
-          import {InputField} from '@playkit-js/common';
+          import {InputField} from '@playkit-js/common/dist/components/input-field';
           ...
           <InputField
             value={'${args.value}'}

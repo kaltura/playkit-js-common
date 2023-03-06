@@ -1,0 +1,12 @@
+import { h } from 'preact';
+
+export const Print = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M23 23H26C27.1046 23 28 22.1046 28 21V11C28 9.89543 27.1046 9 26 9H23V5C23 3.89543 22.1046 3 21 3H11C9.89543 3 9 3.89543 9 5V9H6C4.89543 9 4 9.89543 4 11V21C4 22.1046 4.89543 23 6 23H9V28C9 29.1046 9.89543 30 11 30H21C22.1046 30 23 29.1046 23 28V23ZM6 11V21H9V19C8.44772 19 8 18.5523 8 18C8 17.4477 8.44772 17 9 17H23C23.5523 17 24 17.4477 24 18C24 18.5523 23.5523 19 23 19V21H26V11H6ZM21 9V5H11V9H21ZM11 19V28H21V19H11Z"
+      fill="white"
+    />
+  </svg>
+);
