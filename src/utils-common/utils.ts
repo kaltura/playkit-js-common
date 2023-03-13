@@ -27,6 +27,17 @@ export function getUserId(): string {
   return anonymousUserId;
 }
 
+// makes uniq user id for push notification client
+export const getQnaUserId = (player: KalturaPlayerTypes.Player): string => {
+  const { config, plugins } = player as any;
+  const session = config?.session || {};
+  const userRole = plugins?.qna?.config?.userRole || session.userRole;
+  if (!userRole || userRole === 'anonymousRole') {
+    return getUserId();
+  }
+  return plugins?.qna?.config?.userId || session.userId;
+};
+
 function _generateAnonymousUserId() {
   const HashSeparatorText = 'HashSeparator';
   const DefaultAnonymousPrefix = 'Guest';
@@ -35,11 +46,11 @@ function _generateAnonymousUserId() {
 
 type Procedure = (...args: any[]) => void;
 export function debounce<F extends Procedure>(
-    func: F,
-    waitMilliseconds = 50,
-    options = {
-      isImmediate: false
-    }
+  func: F,
+  waitMilliseconds = 50,
+  options = {
+    isImmediate: false
+  }
 ): F {
   let timeoutId: any;
 
