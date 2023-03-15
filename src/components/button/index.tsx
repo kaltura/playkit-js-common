@@ -33,7 +33,7 @@ export interface ButtonProps {
   disabled?: boolean;
   tabIndex?: number;
   ariaLabel?: string;
-  onClick: OnClick;
+  onClick?: OnClick;
   className?: string;
   tooltip?: TooltipProps;
   size?: ButtonSize;
@@ -42,6 +42,8 @@ export interface ButtonProps {
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
   const renderButton = () => {
+    const onClick = props.onClick || (() => {});
+
     const classNames = classnames(styles.button, styles[props.size!], styles[props.type!], props.className, {
       [styles.disabled]: props.disabled,
       [styles.withIcon]: props.children && props.icon,
@@ -56,7 +58,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       ...(props.testId ? { 'data-testid': props.testId } : {})
     };
     return (
-      <A11yWrapper onClick={props.onClick}>
+      <A11yWrapper onClick={onClick}>
         <button {...buttonProps}>
           <Fragment>
             {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
