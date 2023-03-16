@@ -42,8 +42,6 @@ export interface ButtonProps {
 
 export const Button: FunctionComponent<ButtonProps> = (props) => {
   const renderButton = () => {
-    const onClick = props.onClick || (() => {});
-
     const classNames = classnames(styles.button, styles[props.size!], styles[props.type!], props.className, {
       [styles.disabled]: props.disabled,
       [styles.withIcon]: props.children && props.icon,
@@ -57,16 +55,17 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       ...(props.ariaLabel ? { 'aria-label': props.ariaLabel } : {}),
       ...(props.testId ? { 'data-testid': props.testId } : {})
     };
-    return (
-      <A11yWrapper onClick={onClick}>
-        <button {...buttonProps}>
-          <Fragment>
-            {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
-            {props.children && <span>{props.children}</span>}
-          </Fragment>
-        </button>
-      </A11yWrapper>
+
+    const buttonContent = (
+      <button {...buttonProps}>
+        <Fragment>
+          {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
+          {props.children && <span>{props.children}</span>}
+        </Fragment>
+      </button>
     );
+
+    return props.onClick ? <A11yWrapper onClick={props.onClick}>{buttonContent}</A11yWrapper> : buttonContent;
   };
 
   if (props.tooltip) {
