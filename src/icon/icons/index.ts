@@ -5,6 +5,7 @@ import { Download } from './download';
 import { Related } from './related';
 import { Message } from './message';
 import { Share } from './share';
+import { More } from './more';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -12,5 +13,6 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   download: Download,
   related: Related,
   message: Message,
-  share: Share
+  share: Share,
+  more: More
 };
