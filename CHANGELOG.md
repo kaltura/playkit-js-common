@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/kaltura/playkit-js-common/compare/v1.1.7...v1.2.0) (2023-04-11)
+
+
+### Features
+
+* **FEV-1634:** add quiz tab to filter bar ([7e30a57](https://github.com/kaltura/playkit-js-common/commit/7e30a57c34720b2765bafe482192124468d1023e))
+
 ## [1.1.8](https://github.com/kaltura/playkit-js-common/compare/v1.1.7...v1.1.8) (2023-03-31)
 
 
