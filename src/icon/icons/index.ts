@@ -7,6 +7,11 @@ import { Message } from './message';
 import { Share } from './share';
 import { More } from './more';
 import { QuizIcon } from './quiz';
+import { Switch } from './switch';
+import { Add } from './add';
+import { MinimizedVideo } from './minimizedVideo';
+import { PictureInPicture } from './pictureInPicture';
+import { Expand } from './expand';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -16,5 +21,10 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   message: Message,
   share: Share,
   more: More,
-  quiz: QuizIcon
+  quiz: QuizIcon,
+  switch: Switch,
+  add: Add,
+  minimizedVideo: MinimizedVideo,
+  pictureInPicture: PictureInPicture,
+  expand: Expand
 };

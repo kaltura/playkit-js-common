@@ -36,17 +36,15 @@ const Template = (args: IconProps) => {
     get: () => (
       <OverlayPortal>
         <Overlay open permanent>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-              {Object.keys(Icons).map((name) => (
-                <div key={name} style={{ display: 'flex', flexDirection: 'column', width: '60px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <IconComponent name={name} {...args} />
-                  </div>
-                  <span style={{ fontSize: '14px', textAlign: 'center' }}>{name}</span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-around" }}>
+            {Object.keys(Icons).map((name) => (
+              <div key={name} style={{ display: 'flex', flexDirection: 'column', width: '60px', margin: '6px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <IconComponent name={name} {...args} />
                 </div>
-              ))}
-            </div>
+                <span style={{ fontSize: '14px', textAlign: 'center' }}>{name}</span>
+              </div>
+            ))}
           </div>
         </Overlay>
       </OverlayPortal>
