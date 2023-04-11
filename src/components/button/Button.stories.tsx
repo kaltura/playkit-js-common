@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { ui } from 'kaltura-player-js';
 import { Button as ButtonComponent, ButtonProps, ButtonSize, ButtonType } from './index';
 import { OverlayPortal } from '../../hoc/overlay-portal';
-import {Icons} from "../../icon/icons";
+import { Icons } from '../../icon/icons';
 
 //@ts-ignore
 const { Overlay } = ui.Components;
@@ -77,7 +77,7 @@ const Template = (args: ButtonProps) => {
             tooltip={${args.tooltip ? '{ label: Tooltip }' : 'null'}}
             icon={${args.icon ? `'${args.icon}'` : 'null'}}
           >
-            ${args.children || ""}
+            ${args.children || ''}
           </Button>
         `}
       </code>
@@ -92,4 +92,4 @@ WithTooltip.args = { type: ButtonType.primary, children: 'Hover on button', tool
 export const WithIcon: any = Template.bind({});
 WithIcon.args = { type: ButtonType.primary, children: 'With Icon', icon: 'close' };
 export const IconOnly: any = Template.bind({});
-IconOnly.args = { type: ButtonType.primary, icon: 'close', tooltip: { label: 'Tooltip' } };
+IconOnly.args = { type: ButtonType.primary, icon: 'close', tooltip: { label: 'Tooltip', type: 'bottom' } };

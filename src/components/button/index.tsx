@@ -71,6 +71,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
   if (props.tooltip) {
     const tooltipProps = {
       label: props.tooltip.label,
+      ...(props.tooltip.type ? { type: props.tooltip.type } : {}),
       ...(props.tooltip.className ? { classNames: props.tooltip.className } : {})
     };
     return <Tooltip {...tooltipProps}>{renderButton()}</Tooltip>;
