@@ -1,4 +1,4 @@
-import { h, ComponentChild, FunctionComponent, Fragment } from 'preact';
+import { h, ComponentChild, Fragment, Component, createRef } from 'preact';
 import * as classnames from 'classnames';
 import { ui } from 'kaltura-player-js';
 import { A11yWrapper, OnClick } from '../../hoc/a11y-wrapper';
@@ -38,16 +38,25 @@ export interface ButtonProps {
   tooltip?: TooltipProps;
   size?: ButtonSize;
   type?: ButtonType;
+  focusOnMount?: boolean;
 }
 
-export const Button: FunctionComponent<ButtonProps> = (props) => {
-  const renderButton = () => {
+export class Button extends Component<ButtonProps> {
+  buttonRef = createRef<HTMLButtonElement>();
+
+  componentDidMount(): void {
+    if (this.props.focusOnMount) this.buttonRef.current?.focus();
+  }
+
+  renderButton = () => {
+    const { props } = this;
     const classNames = classnames(styles.button, styles[props.size!], styles[props.type!], props.className, {
       [styles.disabled]: props.disabled,
       [styles.withIcon]: props.children && props.icon,
       [styles.iconOnly]: !props.children && props.icon
     });
     const buttonProps = {
+      ref: this.buttonRef,
       disabled: props.disabled,
       'aria-disabled': props.disabled,
       tabIndex: props.tabIndex,
@@ -55,7 +64,6 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       ...(props.ariaLabel ? { 'aria-label': props.ariaLabel } : {}),
       ...(props.testId ? { 'data-testid': props.testId } : {})
     };
-
     const buttonContent = (
       <button {...buttonProps}>
         <Fragment>
@@ -68,19 +76,22 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
     return props.onClick ? <A11yWrapper onClick={props.onClick}>{buttonContent}</A11yWrapper> : buttonContent;
   };
 
-  if (props.tooltip) {
-    const tooltipProps = {
-      label: props.tooltip.label,
-      ...(props.tooltip.type ? { type: props.tooltip.type } : {}),
-      ...(props.tooltip.className ? { classNames: props.tooltip.className } : {})
-    };
-    return <Tooltip {...tooltipProps}>{renderButton()}</Tooltip>;
+  render(props: ButtonProps) {
+    if (props.tooltip) {
+      const tooltipProps = {
+        label: props.tooltip.label,
+        ...(props.tooltip.type ? { type: props.tooltip.type } : {}),
+        ...(props.tooltip.className ? { classNames: props.tooltip.className } : {})
+      };
+      return <Tooltip {...tooltipProps}>{this.renderButton()}</Tooltip>;
+    }
+    return this.renderButton();
   }
-  return renderButton();
-};
+}
 
 Button.defaultProps = {
   disabled: false,
+  focusOnMount: false,
   tabIndex: 0,
   children: null,
   size: ButtonSize.medium,

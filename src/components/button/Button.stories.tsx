@@ -74,8 +74,9 @@ const Template = (args: ButtonProps) => {
             size={'${args.size}'}
             disabled={${args.disabled}}
             onClick={(e: OnClickEvent, byKeyboard: boolean) => {}}
-            tooltip={${args.tooltip ? '{ label: Tooltip }' : 'null'}}
+            tooltip={${args.tooltip ? '{ label: Tooltip, type: "bottom" }' : 'null'}}
             icon={${args.icon ? `'${args.icon}'` : 'null'}}
+            focusOnMount={${args.focusOnMount ? 'true' : 'false'}}
           >
             ${args.children || ''}
           </Button>
@@ -93,3 +94,5 @@ export const WithIcon: any = Template.bind({});
 WithIcon.args = { type: ButtonType.primary, children: 'With Icon', icon: 'close' };
 export const IconOnly: any = Template.bind({});
 IconOnly.args = { type: ButtonType.primary, icon: 'close', tooltip: { label: 'Tooltip', type: 'bottom' } };
+export const FocusOnMount: any = Template.bind({});
+FocusOnMount.args = { type: ButtonType.primary, children: 'Focus on mount', focusOnMount: true };
