@@ -29,6 +29,7 @@ jobs:
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
+          build: npx playwright install-deps webkit
           runTests: false
       - name: Build
         run: yarn run test:prepare
