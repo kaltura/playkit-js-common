@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { ui } from 'kaltura-player-js';
+import { ui } from '@playkit-js/kaltura-player-js';
 import { Button as ButtonComponent, ButtonProps, ButtonSize, ButtonType } from './index';
 import { OverlayPortal } from '../../hoc/overlay-portal';
 import { Icons } from '../../icon/icons';

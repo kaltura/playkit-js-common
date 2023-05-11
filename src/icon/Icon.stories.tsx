@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { ui } from 'kaltura-player-js';
+import { ui } from '@playkit-js/kaltura-player-js';
 import { Icon as IconComponent, IconSize, IconProps } from './index';
 import { OverlayPortal } from '../hoc/overlay-portal';
 import { Icons } from './icons';
