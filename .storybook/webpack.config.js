@@ -31,7 +31,7 @@ module.exports = async ({ mode, config }) => {
     config.plugins.push(
         new CopyPlugin({
             patterns: [
-                { from: './node_modules/kaltura-player-js/dist/kaltura-ovp-player.js', to: './kaltura-player/kaltura-ovp-player.js' }
+                { from: './node_modules/@playkit-js/kaltura-player-js/dist/kaltura-ovp-player.js', to: './kaltura-player/kaltura-ovp-player.js' }
             ],
         })
     );
