@@ -1,5 +1,5 @@
 import { cloneElement, VNode } from 'preact';
-import { ui } from 'kaltura-player-js';
+import { ui } from '@playkit-js/kaltura-player-js';
 const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = ui.utils.KeyMap;
 
 export type OnClickEvent = KeyboardEvent | MouseEvent;

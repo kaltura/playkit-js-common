@@ -52,7 +52,7 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "gh-pages": "^5.0.0",
-    "kaltura-player-js": "https://github.com/kaltura/kaltura-player-js.git#master",
+    "@playkit-js/kaltura-player-js": "canary",
     "preact": "^10.13.0",
     "prettier": "^2.8.4",
     "sass": "^1.52.1",
@@ -66,13 +66,13 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
-    "kaltura-player-js": "https://github.com/kaltura/kaltura-player-js.git#master"
+    "@playkit-js/kaltura-player-js": "canary"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@playkit-js/playkit-js-ui": "^0.74.0",
+    "@playkit-js/playkit-js-ui": "^0.77.1",
     "classnames": "^2.3.2",
     "linkify-it": "^4.0.1"
   }
