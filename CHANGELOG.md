@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/kaltura/playkit-js-common/compare/v1.2.3...v1.2.4) (2023-05-15)
+
+
+### Bug Fixes
+
+* **FEC-13130:** #of/no results search should be announced ([#17](https://github.com/kaltura/playkit-js-common/issues/17)) ([319b919](https://github.com/kaltura/playkit-js-common/commit/319b9197b511c342dc78d37a308084c95c99d258))
+
 ### [1.2.3](https://github.com/kaltura/playkit-js-common/compare/v1.2.2...v1.2.3) (2023-05-11)
 
 
