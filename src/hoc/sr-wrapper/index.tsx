@@ -17,7 +17,7 @@ export class ScreenReaderProvider extends Component {
     return (
       <ScreenReaderContext.Provider value={this._setTextToRead}>
         {this.props.children}
-        <div style={styles.srWrapper} aria-live={'polite'}>
+        <div style={styles.srWrapper} aria-live={'polite'} data-testid="screenReaderWrapper">
           <span id='sr-only' aria-label={this.state.textToRead}>
             {this.state.textToRead}
           </span>
