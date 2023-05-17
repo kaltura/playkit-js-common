@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.5](https://github.com/kaltura/playkit-js-common/compare/v1.2.3...v1.2.5) (2023-05-17)
+
+
+### Bug Fixes
+
+* **FEC-13130:** #of/no results search should be announced ([#17](https://github.com/kaltura/playkit-js-common/issues/17)) ([319b919](https://github.com/kaltura/playkit-js-common/commit/319b9197b511c342dc78d37a308084c95c99d258))
+* **FEC-13157:** add data test id to screenReaderWrapper component ([#18](https://github.com/kaltura/playkit-js-common/issues/18)) ([e2b6b25](https://github.com/kaltura/playkit-js-common/commit/e2b6b25e5308adb698475aa2d8dd73b2b0310c38))
+
 ### [1.2.4](https://github.com/kaltura/playkit-js-common/compare/v1.2.3...v1.2.4) (2023-05-15)
 
 
