@@ -1,5 +1,10 @@
 # playkit-js-common
 
+[![Build Status](https://github.com/kaltura/playkit-js-common/actions/workflows/run_canary_full_flow.yaml/badge.svg)](https://github.com/kaltura/playkit-js-common/actions/workflows/run_canary_full_flow.yaml)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![](https://img.shields.io/npm/v/@playkit-js/common/latest.svg)](https://www.npmjs.com/package/@playkit-js/common)
+[![](https://img.shields.io/npm/v/@playkit-js/common/canary.svg)](https://www.npmjs.com/package/@playkit-js/common/v/canary)
+
 Pack of utils and ui-components for V7 player and plugins.
 
 ## How to use
