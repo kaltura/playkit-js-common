@@ -40,11 +40,11 @@ jobs:
           config: video=false
           browser: firefox
       - name: Upload screenshots
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: cypress-snapshots
-          path: cypress/snapshots
+          name: cypress-screenshots
+          path: ./cypress/screenshots
   edge:
     runs-on: ubuntu-20.04
     name: E2E on Edge
