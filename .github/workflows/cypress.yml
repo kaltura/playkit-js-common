@@ -18,20 +18,19 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           install: false
-          config: video=false
           browser: chrome
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: ./cypress/screenshots
       - name: Upload video
         uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
   firefox:
     runs-on: ubuntu-20.04
     name: E2E on Firefox
@@ -50,18 +49,18 @@ jobs:
         with:
           install: false
           browser: firefox
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: ./cypress/screenshots
       - name: Upload video
         uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
   edge:
     runs-on: ubuntu-20.04
     name: E2E on Edge
@@ -78,20 +77,19 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           install: false
-          config: video=false
           browser: edge
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: ./cypress/screenshots
       - name: Upload video
         uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
   # safari:
   #   runs-on: ubuntu-20.04
   #   name: E2E on Safari
@@ -110,7 +108,6 @@ jobs:
   #       uses: cypress-io/github-action@v5
   #       with:
   #         install: false
-  #         config: video=false
   #         browser: webkit
   #     - name: Upload screenshots
   #       uses: actions/upload-artifact@v2
