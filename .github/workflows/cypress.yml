@@ -3,7 +3,7 @@ on:
 
 jobs:
   chrome:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: E2E on Chrome
     steps:
       - name: Checkout
@@ -17,6 +17,7 @@ jobs:
       - name: E2E on Chrome
         uses: cypress-io/github-action@v5
         with:
+          video: true
           install: false
           browser: chrome
       - name: Upload video
@@ -32,7 +33,7 @@ jobs:
           name: cypress-screenshots
           path: ./cypress/screenshots
   firefox:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: E2E on Firefox
     steps:
       - name: Checkout
@@ -47,6 +48,7 @@ jobs:
       - name: E2E on Firefox
         uses: cypress-io/github-action@v5
         with:
+          video: true
           install: false
           browser: firefox
       - name: Upload video
@@ -62,7 +64,7 @@ jobs:
           name: cypress-screenshots
           path: ./cypress/screenshots
   edge:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: E2E on Edge
     steps:
       - name: Checkout
@@ -76,6 +78,7 @@ jobs:
       - name: E2E on Edge
         uses: cypress-io/github-action@v5
         with:
+          video: true
           install: false
           browser: edge
       - name: Upload video
@@ -91,7 +94,7 @@ jobs:
           name: cypress-screenshots
           path: ./cypress/screenshots
   # safari:
-  #   runs-on: ubuntu-20.04
+  #   runs-on: ubuntu-22.04
   #   name: E2E on Safari
   #   steps:
   #     - name: Checkout
