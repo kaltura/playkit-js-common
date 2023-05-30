@@ -20,6 +20,18 @@ jobs:
           install: false
           config: video=false
           browser: chrome
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
+      - name: Upload video
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
   firefox:
     runs-on: ubuntu-20.04
     name: E2E on Firefox
@@ -37,7 +49,6 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           install: false
-          config: video=false
           browser: firefox
       - name: Upload screenshots
         uses: actions/upload-artifact@v2
@@ -45,6 +56,12 @@ jobs:
         with:
           name: cypress-screenshots
           path: ./cypress/screenshots
+      - name: Upload video
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
   edge:
     runs-on: ubuntu-20.04
     name: E2E on Edge
@@ -63,9 +80,21 @@ jobs:
           install: false
           config: video=false
           browser: edge
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
+      - name: Upload video
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
   # safari:
   #   runs-on: ubuntu-20.04
-  #   name: E2E on Firefox
+  #   name: E2E on Safari
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v3
@@ -83,3 +112,15 @@ jobs:
   #         install: false
   #         config: video=false
   #         browser: webkit
+  #     - name: Upload screenshots
+  #       uses: actions/upload-artifact@v2
+  #       if: failure()
+  #       with:
+  #         name: cypress-screenshots
+  #         path: ./cypress/screenshots
+  #     - name: Upload video
+  #       uses: actions/upload-artifact@v2
+  #       if: failure()
+  #       with:
+  #         name: cypress-videos
+  #         path: ./cypress/videos
