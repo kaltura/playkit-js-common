@@ -17,7 +17,7 @@ jobs:
       - name: E2E on Chrome
         uses: cypress-io/github-action@v5
         with:
-          video: true
+          config: video=true
           install: false
           browser: chrome
       - name: Upload video
@@ -48,7 +48,7 @@ jobs:
       - name: E2E on Firefox
         uses: cypress-io/github-action@v5
         with:
-          video: true
+          config: video=true
           install: false
           browser: firefox
       - name: Upload video
@@ -78,7 +78,7 @@ jobs:
       - name: E2E on Edge
         uses: cypress-io/github-action@v5
         with:
-          video: true
+          config: video=true
           install: false
           browser: edge
       - name: Upload video
@@ -110,6 +110,7 @@ jobs:
   #     - name: E2E on Safari
   #       uses: cypress-io/github-action@v5
   #       with:
+  #         config: video=true
   #         install: false
   #         browser: webkit
   #     - name: Upload screenshots
