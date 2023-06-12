@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.10 (2023-06-12)
+
+
+### Bug Fixes
+
+* **FEC-13222:** common repo has TS errors in the exported file declarations ([#24](https://github.com/kaltura/playkit-js-common/issues/24)) ([945beff](https://github.com/kaltura/playkit-js-common/commit/945beff0b5dad5a51a7176f4cba6d2f16e8ff9c5))
+
 ### 1.2.9 (2023-05-23)
 
 
