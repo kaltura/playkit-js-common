@@ -1,4 +1,4 @@
-import { cloneElement, VNode } from 'preact';
+import {cloneElement, ComponentChild, VNode,} from 'preact';
 import { ui } from '@playkit-js/kaltura-player-js';
 const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = ui.utils.KeyMap;
 
@@ -6,7 +6,7 @@ export type OnClickEvent = KeyboardEvent | MouseEvent;
 export type OnClick = (e: OnClickEvent, byKeyboard: boolean) => void;
 
 interface A11yWrapperProps {
-  children: VNode;
+  children: ComponentChild;
   onClick: OnClick;
   onUpKeyPressed?: (e: KeyboardEvent) => void;
   onDownKeyPressed?: (e: KeyboardEvent) => void;
@@ -57,16 +57,15 @@ export const A11yWrapper = ({
       }
     },
     onClick: (e: MouseEvent) => {
-      e.stopPropagation();
       onClick(e, isKeyboardEvent(e));
     },
     role
   };
-  if (children.type === 'button') {
+  if ((children as VNode)?.type  === 'button') {
     props.type = type || 'button';
   }
 
-  return cloneElement(children, props);
+  return cloneElement(children as VNode, props);
 };
 
 A11yWrapper.defaultProps = {
