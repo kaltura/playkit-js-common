@@ -12,6 +12,9 @@ export default {
   component: ButtonComponent,
   argTypes: {
     onClick: { action: 'clicked' },
+    onBlur: { action: 'blur' },
+    onFocus: { action: 'focus' },
+    setRef: { action: 'set ref' },
     type: {
       options: [ButtonType.primary, ButtonType.danger, ButtonType.translucent, ButtonType.borderless],
       defaultValue: ButtonType.primary,
@@ -74,6 +77,9 @@ const Template = (args: ButtonProps) => {
             size={'${args.size}'}
             disabled={${args.disabled}}
             onClick={(e: OnClickEvent, byKeyboard: boolean) => {}}
+            onFocus={(e: FocusEvent) => {}}
+            onBlur={(e: FocusEvent) => {}}
+            setRef={(ref: HTMLButtonElement) => {}}
             tooltip={${args.tooltip ? '{ label: Tooltip, type: "bottom" }' : 'null'}}
             icon={${args.icon ? `'${args.icon}'` : 'null'}}
             focusOnMount={${args.focusOnMount ? 'true' : 'false'}}
