@@ -39,13 +39,21 @@ export interface ButtonProps {
   size?: ButtonSize;
   type?: ButtonType;
   focusOnMount?: boolean;
+  onBlur?: () => void;
+  onFocus?: () => void;
+  setRef?: (ref: HTMLButtonElement) => void;
 }
 
 export class Button extends Component<ButtonProps> {
   buttonRef = createRef<HTMLButtonElement>();
 
   componentDidMount(): void {
-    if (this.props.focusOnMount) this.buttonRef.current?.focus();
+    if (this.props.setRef) {
+      this.props.setRef(this.buttonRef.current!);
+    }
+    if (this.props.focusOnMount) {
+      this.buttonRef.current?.focus();
+    }
   }
 
   renderButton = () => {
@@ -62,7 +70,9 @@ export class Button extends Component<ButtonProps> {
       tabIndex: props.tabIndex,
       className: classNames,
       ...(props.ariaLabel ? { 'aria-label': props.ariaLabel } : {}),
-      ...(props.testId ? { 'data-testid': props.testId } : {})
+      ...(props.testId ? { 'data-testid': props.testId } : {}),
+      ...(props.onFocus ? { onFocus: props.onFocus } : {}),
+      ...(props.onBlur ? { onBlur: props.onBlur } : {})
     };
     const buttonContent = (
       <button {...buttonProps}>
