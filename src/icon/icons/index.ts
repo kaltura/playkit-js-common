@@ -12,6 +12,11 @@ import { Add } from './add';
 import { MinimizedVideo } from './minimizedVideo';
 import { PictureInPicture } from './pictureInPicture';
 import { Expand } from './expand';
+import { ArrowOpen } from './arrowOpen';
+import { ArrowClose } from './arrowClose';
+import { Chapter } from './chapter';
+import { Hotspot } from './hotspot';
+import { AnswerOnAir } from './answerOnAir';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -26,5 +31,10 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   add: Add,
   minimizedVideo: MinimizedVideo,
   pictureInPicture: PictureInPicture,
-  expand: Expand
+  expand: Expand,
+  arrowOpen: ArrowOpen,
+  arrowClose: ArrowClose,
+  chapter: Chapter,
+  hotspot: Hotspot,
+  answerOnAir: AnswerOnAir
 };
