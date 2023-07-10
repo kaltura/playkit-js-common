@@ -57,7 +57,7 @@ jobs:
         if: env.COMMIT_REQUIRED == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
-          title: 'build(deps): Upgrade Kaltura dependencies (automated)'
+          title: 'fix(FEC-00000): Upgrade Kaltura dependencies (automated)'
           delete-branch: true
           branch: 'upgrade-npm-packages-automated'
-          commit-message: 'build(deps): Upgrade Kaltura dependencies (automated)'
+          commit-message: 'Upgrade Kaltura dependencies (automated)'
