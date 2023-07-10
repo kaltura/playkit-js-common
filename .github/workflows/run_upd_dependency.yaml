@@ -14,6 +14,13 @@ jobs:
 
       - name: Check updates Kaltura dependencies
         run: |
+          # Define Kaltura dependencies
+          kalturaDependencies=(
+            '{"name": "playkit-kaltura-cuepoints", "package": "@playkit-js/playkit-js-kaltura-cuepoints"}'
+            '{"name": "playkit-timeline", "package": "@playkit-js/playkit-js-timeline"}'
+            '{"name": "playkit-ui-managers", "package": "@playkit-js/ui-managers"}'
+          )
+
           # Check and update a dependency
           checkAndUpdateDependency() {
             local dependencyName="$1"
@@ -33,21 +40,18 @@ jobs:
                 echo "$UPDATED_CONTENT" > package.json
                 echo "COMMIT_REQUIRED=true" >> $GITHUB_ENV
               else
-                echo "Dependency $dependencyName already has latest version: $latestVersion"
+                echo "Dependency $dependencyName already has the latest version: $latestVersion"
               fi
             else
               echo "No $dependencyName dependency found in package.json"
             fi
           }
 
-          # Check and update playkit-kaltura-cuepoints dependency
-          checkAndUpdateDependency "playkit-kaltura-cuepoints" "@playkit-js/playkit-js-kaltura-cuepoints"
-
-          # Check and update playkit-timeline dependency
-          checkAndUpdateDependency "playkit-timeline" "@playkit-js/playkit-js-timeline"
-
-          # Check and update playkit-ui-managers dependency
-          checkAndUpdateDependency "playkit-ui-managers" "@playkit-js/ui-managers"
+          for dependency in "${kalturaDependencies[@]}"; do
+            dependencyName=$(echo "$dependency" | jq -r ".name")
+            packageName=$(echo "$dependency" | jq -r ".package")
+            checkAndUpdateDependency "$dependencyName" "$packageName"
+          done
 
       - name: Commit changes
         if: env.COMMIT_REQUIRED == 'true'
