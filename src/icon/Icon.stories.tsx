@@ -38,7 +38,7 @@ const Template = (args: IconProps) => {
         <Overlay open permanent>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-around" }}>
             {Object.keys(Icons).map((name) => (
-              <div key={name} style={{ display: 'flex', flexDirection: 'column', width: '60px', margin: '6px' }}>
+              <div key={name} style={{ display: 'flex', flexDirection: 'column', width: '90px', margin: '6px' }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                   <IconComponent name={name} {...args} />
                 </div>
