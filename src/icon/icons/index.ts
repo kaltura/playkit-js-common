@@ -17,6 +17,8 @@ import { ArrowClose } from './arrowClose';
 import { Chapter } from './chapter';
 import { Hotspot } from './hotspot';
 import { AnswerOnAir } from './answerOnAir';
+import { ScreenRotation } from './screenRotation';
+import { AutoScroll } from './autoScroll';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -36,5 +38,7 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   arrowClose: ArrowClose,
   chapter: Chapter,
   hotspot: Hotspot,
-  answerOnAir: AnswerOnAir
+  answerOnAir: AnswerOnAir,
+  screenRotation: ScreenRotation,
+  autoScroll: AutoScroll
 };
