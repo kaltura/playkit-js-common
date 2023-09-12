@@ -2,8 +2,8 @@
 import { h, Component } from "preact";
 import * as styles from './spinner.scss';
 
-type SpinnerProps = {
-  size: number;
+export interface SpinnerProps {
+  size: number
 };
 
 export class Spinner extends Component<SpinnerProps> {
