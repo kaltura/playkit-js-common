@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.3.0 (2023-09-12)
+
+
+### Features
+
+* **FEC-13313:** add spinner component ([#29](https://github.com/kaltura/playkit-js-common/issues/29)) ([7eefe70](https://github.com/kaltura/playkit-js-common/commit/7eefe7019bd3cb5b849d1cbecd9ee3214f78f9c8))
+
 ### 1.2.13 (2023-07-13)
 
 ### 1.2.12 (2023-07-10)
