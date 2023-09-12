@@ -1,0 +1,25 @@
+@keyframes circularRotate {
+  0% {
+    transform: rotate(0deg);
+    /* Fix IE11 wobbly */
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-root {
+  position: relative;
+  .spinner-background-circle,
+  .spinner-top-circle {
+    display: inline-block;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    left: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+  }
+  .spinner-top-circle {
+    animation: 1s linear 0s infinite normal none running circularRotate;
+  }
+}
