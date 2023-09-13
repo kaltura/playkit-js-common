@@ -104,7 +104,7 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
                 }`}
                 aria-label={this.props.searchResults!.prevMatchLabel}
               >
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M0.292893 4.70711C0.653377 5.06759 1.22061 5.09532 1.6129 4.7903L1.70711 4.70711L4 2.415L6.29289 4.70711C6.65338 5.06759 7.22061 5.09532 7.6129 4.7903L7.70711 4.70711C8.06759 4.34662 8.09532 3.77939 7.7903 3.3871L7.70711 3.29289L4.70711 0.292893C4.34662 -0.0675907 3.77939 -0.0953203 3.3871 0.209705L3.29289 0.292893L0.292893 3.29289C-0.0976311 3.68342 -0.0976311 4.31658 0.292893 4.70711Z"
                     fill="white"
@@ -123,7 +123,7 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
                 }`}
                 aria-label={this.props.searchResults!.nextMatchLabel}
               >
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -144,7 +144,7 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
     return (
       <A11yWrapper onClick={this._onClear}>
         <button className={styles.clearIcon} tabIndex={0} aria-label={this.props.clearSearchLabel!}>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
