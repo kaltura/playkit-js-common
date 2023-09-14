@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.4.0 (2023-09-14)
+
+
+### Features
+
+* **FEC-13313:** manage multiple overlays in OverlayPortal ([#31](https://github.com/kaltura/playkit-js-common/issues/31)) ([ebccf19](https://github.com/kaltura/playkit-js-common/commit/ebccf19310a72fbcc2fa883470ea717bb783e9a2))
+
 ## 1.3.0 (2023-09-12)
 
 
