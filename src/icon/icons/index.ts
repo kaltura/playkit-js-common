@@ -19,6 +19,7 @@ import { Hotspot } from './hotspot';
 import { AnswerOnAir } from './answerOnAir';
 import { ScreenRotation } from './screenRotation';
 import { AutoScroll } from './autoScroll';
+import { ReplayIcon } from './replay';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -40,5 +41,6 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   hotspot: Hotspot,
   answerOnAir: AnswerOnAir,
   screenRotation: ScreenRotation,
-  autoScroll: AutoScroll
+  autoScroll: AutoScroll,
+  replay: ReplayIcon
 };
