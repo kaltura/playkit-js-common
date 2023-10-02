@@ -1,18 +1,10 @@
-## Canary CI/CD
-name: Canary Reusable Full Flow
-run-name: Canary Reusable Full Flow
+## Canary CI/CD for plugin type
+name: Canary Base Full Flow Plugin Type
+run-name: Canary Base Full Flow Plugin Type
 
 on:
   workflow_call:
     inputs:
-      type:
-        description: "choose player or plugin or dependency - example: 'plugin/player/dependency'"
-        required: true
-        type: string
-      stage:
-        description: "build for specific type - example: 'canary/beta/latest'"
-        required: false
-        type: string
       schema-type:
         description: "schema-type - example: 'playerV3Versions/playerV3OvpVersions'"
         required: true
@@ -21,19 +13,9 @@ on:
         description: "list of package.json scripts - example: 'eslint flow test'"
         required: true
         type: string
-      node-version:
-        description: "which node version to use - example: '17.x/18.x'"
-        required: false
-        type: string
-        default: '18.x'
-      github-actor:
-        description: "the user who triggered the job"
-        required: true
-        type: string
 
 jobs:
   canary-full-flow:
-    if: ${{ inputs.github-actor != 'PlaykitJs-Bot' }}
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
@@ -46,10 +28,10 @@ jobs:
       PLAYER_GITHUB_BOT_TOKEN: ${{ secrets.PLAYER_GITHUB_BOT_TOKEN }}
       PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
     with:
-      type: ${{ inputs.type }}
-      stage: ${{ inputs.stage }}
+      type: "plugin"
+      stage: "canary"
+      node-version: "18.x"
       schema-type: ${{ inputs.schema-type }}
-      node-version: ${{ inputs.node-version }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
 
 

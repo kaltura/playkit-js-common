@@ -16,7 +16,8 @@ jobs:
     #secrets: inherit
 
   canary-full-flow:
-    uses: ./.github/workflows/canary-full-flow.yaml
+    if: ${{ github.actor != 'PlaykitJs-Bot' }}
+    uses: ./.github/workflows/canary-full-flow-dependency.yaml
     secrets: inherit
     with:
       type: "dependency"
