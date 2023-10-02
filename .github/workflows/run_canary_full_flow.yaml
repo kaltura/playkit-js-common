@@ -20,10 +20,7 @@ jobs:
     uses: ./.github/workflows/canary-full-flow-dependency.yaml
     secrets: inherit
     with:
-      type: "dependency"
-      stage: "canary"
       schema-type: "playerV3OvpVersions"
       tests-yarn-run-to-execute: 'build'
-      github-actor: ${{ github.actor }}
 
 
