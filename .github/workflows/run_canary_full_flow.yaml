@@ -14,7 +14,7 @@ jobs:
 
   canary-full-flow:
     if: ${{ github.actor != 'PlaykitJs-Bot' }}
-    uses: ./.github/workflows/canary-full-flow-dependency.yaml
+    uses: ./.github/workflows/canary_full_flow_dependency.yaml
     secrets: inherit
     with:
       schema-type: "playerV3OvpVersions"
