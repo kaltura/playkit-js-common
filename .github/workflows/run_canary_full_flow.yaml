@@ -16,7 +16,7 @@ jobs:
     #secrets: inherit
 
   canary-full-flow:
-    uses: ./.github/workflows/canary-full-flow
+    uses: ./.github/workflows/canary-full-flow.yml
     secrets: inherit
     with:
       type: "dependency"
