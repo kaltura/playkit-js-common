@@ -1,6 +1,6 @@
 ## Canary CI/CD for player type
-name: Canary Base Full Flow Player Type
-run-name: Canary Base Full Flow Player Type
+name: Base Canary Full Flow Player Type
+run-name: Base Canary Full Flow Player Type
 
 on:
   workflow_call:

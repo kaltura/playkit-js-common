@@ -1,6 +1,6 @@
 ## Canary CI/CD for plugin type
-name: Canary Base Full Flow Plugin Type
-run-name: Canary Base Full Flow Plugin Type
+name: Base Canary Full Flow Plugin Type
+run-name: Base Canary Full Flow Plugin Type
 
 on:
   workflow_call:
