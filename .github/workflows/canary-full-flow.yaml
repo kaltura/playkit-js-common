@@ -1,6 +1,6 @@
 ## Canary CI/CD
-name: Canary Full Flow
-run-name: Canary Full Flow
+name: Canary Reusable Full Flow
+run-name: Canary Reusable Full Flow
 
 on:
   workflow_call:
