@@ -1,6 +1,6 @@
 ## Canary CI/CD for dependency type
 name: Base Canary Dependency Type
-run-name: Base Canary Full Flow Dependency Type
+run-name: Base Canary Dependency Type
 
 on:
   workflow_call:
