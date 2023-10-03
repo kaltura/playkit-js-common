@@ -1,6 +1,6 @@
 ## Canary CI/CD for plugin type
-name: Base Canary Full Flow Plugin Type
-run-name: Base Canary Full Flow Plugin Type
+name: Base Canary Plugin Type
+run-name: Base Canary Plugin Type
 
 on:
   workflow_call:
@@ -20,7 +20,7 @@ on:
         default: '17.x'
 
 jobs:
-  canary-full-flow:
+  canary:
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}

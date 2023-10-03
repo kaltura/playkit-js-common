@@ -1,6 +1,6 @@
-## Canary CI/CD for player type
-name: Base Canary Full Flow Player Type
-run-name: Base Canary Full Flow Player Type
+## Canary CI/CD for dependency type
+name: Base Canary Dependency Type
+run-name: Base Canary Full Flow Dependency Type
 
 on:
   workflow_call:
@@ -13,14 +13,11 @@ on:
         description: "list of package.json scripts - example: 'eslint flow test'"
         required: true
         type: string
-      yarn-upgrade-list:
-        description: "list of packages to overwrite in package.json - example: 'playkit-js/playkit-js@canary @playkit-js/playkit-js-dash@canary'"
+      node-version:
+        description: "which node version to use - example: '17.x/18.x'"
         required: false
         type: string
-      player-type:
-        description: "player type - example 'ovp tv'"
-        required: false
-        type: string
+        default: '17.x'
 
 jobs:
   canary-full-flow:
@@ -36,11 +33,10 @@ jobs:
       PLAYER_GITHUB_BOT_TOKEN: ${{ secrets.PLAYER_GITHUB_BOT_TOKEN }}
       PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
     with:
-      type: "player"
+      type: "dependency"
       stage: "canary"
+      node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
-      yarn-upgrade-list: ${{ inputs.yarn-upgrade-list }}
-      player-type: ${{ inputs.player-type }}
 
 
