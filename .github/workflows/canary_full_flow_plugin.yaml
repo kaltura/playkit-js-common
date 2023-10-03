@@ -20,6 +20,15 @@ on:
         default: '17.x'
 
 jobs:
+  check-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: myjob
+          env:
+            MY_SECRET: ${{ secrets.PLAYER_NPM_TOKEN }}
+          if: env.MY_SECRET != null
+          run: echo "running"
+
   canary-full-flow:
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
     secrets:
