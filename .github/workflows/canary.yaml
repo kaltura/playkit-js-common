@@ -1,0 +1,20 @@
+## Canary CI/CD
+name: Canary
+run-name: Canary
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  canary:
+    if: ${{ github.actor != 'PlaykitJs-Bot' }}
+    uses: ./.github/workflows/canary_dependency.yaml
+    secrets: inherit
+    with:
+      schema-type: "playerV3OvpVersions"
+      tests-yarn-run-to-execute: 'build'
+      node-version: "18.x"
+
+

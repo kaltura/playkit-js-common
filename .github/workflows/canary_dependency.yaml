@@ -1,0 +1,42 @@
+## Canary CI/CD for dependency type
+name: Base Canary Dependency Type
+run-name: Base Canary Dependency Type
+
+on:
+  workflow_call:
+    inputs:
+      schema-type:
+        description: "schema-type - example: 'playerV3Versions/playerV3OvpVersions'"
+        required: true
+        type: string
+      tests-yarn-run-to-execute:
+        description: "list of package.json scripts - example: 'eslint flow test'"
+        required: true
+        type: string
+      node-version:
+        description: "which node version to use - example: '17.x/18.x'"
+        required: false
+        type: string
+        default: '17.x'
+
+jobs:
+  canary:
+    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
+    secrets:
+      PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
+      PLAYER_SERVICES_ACCOUNT_ID: ${{ secrets.PLAYER_SERVICES_ACCOUNT_ID }}
+      PLAYER_S3_BUCKET_DEPLOYMENT: ${{ secrets.PLAYER_S3_BUCKET_DEPLOYMENT }}
+      PLAYER_S3_BUCKET_APPS: ${{ secrets.PLAYER_S3_BUCKET_APPS }}
+      PLAYER_NPM_TOKEN: ${{ secrets.PLAYER_NPM_TOKEN }}
+      PLAYER_LAMBDA_NAME: ${{ secrets.PLAYER_LAMBDA_NAME }}
+      PLAYER_MSTEAMS_WEBHOOK: ${{ secrets.PLAYER_MSTEAMS_WEBHOOK }}
+      PLAYER_GITHUB_BOT_TOKEN: ${{ secrets.PLAYER_GITHUB_BOT_TOKEN }}
+      PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
+    with:
+      type: "dependency"
+      stage: "canary"
+      node-version: ${{ inputs.node-version }}
+      schema-type: ${{ inputs.schema-type }}
+      tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
+
+
