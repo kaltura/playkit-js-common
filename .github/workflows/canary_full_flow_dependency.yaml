@@ -13,6 +13,11 @@ on:
         description: "list of package.json scripts - example: 'eslint flow test'"
         required: true
         type: string
+      node-version:
+        description: "which node version to use - example: '17.x/18.x'"
+        required: false
+        type: string
+        default: '17.x'
 
 jobs:
   canary-full-flow:
@@ -30,7 +35,7 @@ jobs:
     with:
       type: "dependency"
       stage: "canary"
-      node-version: "18.x"
+      node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
 

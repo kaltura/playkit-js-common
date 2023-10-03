@@ -38,7 +38,6 @@ jobs:
     with:
       type: "player"
       stage: "canary"
-      node-version: "18.x"
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
       yarn-upgrade-list: ${{ inputs.yarn-upgrade-list }}
