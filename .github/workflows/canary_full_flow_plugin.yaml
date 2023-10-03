@@ -23,11 +23,15 @@ jobs:
   check-secret:
     runs-on: ubuntu-latest
     steps:
-      - name: myjob
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up secret file
         env:
-          MY_SECRET: ${{ secrets.PLAYER_NPM_TOKEN }}
-        if: env.MY_SECRET != null
-        run: echo "running"
+          PLAYER_NPM_TOKEN: ${{ secrets.PLAYER_NPM_TOKEN }}
+        run: |
+          echo $PLAYER_NPM_TOKEN >> secrets.txt
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
 
   canary-full-flow:
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
