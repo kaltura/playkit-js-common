@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  canary-full-flow:
+  canary:
     if: ${{ github.actor != 'PlaykitJs-Bot' }}
     uses: ./.github/workflows/canary_dependency.yaml
     secrets: inherit
