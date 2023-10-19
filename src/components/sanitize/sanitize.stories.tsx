@@ -48,9 +48,13 @@ const Template = (args: SanitizeProps) => {
     <pre>
       <code class="language-html">
         {`
+          sanitize component:
           import {Sanitize} from '@playkit-js/common/dist/components/sanitize';
           ...
           <Sanitize>{'Test <script>alert()</script> string'}</Sanitize>
+          
+          or you can use 'sanitize-html':
+          import {sanitizeHtml} from '@playkit-js/common/dist/components/sanitize';
         `}
       </code>
     </pre>

@@ -9,3 +9,5 @@ export interface SanitizeProps {
 export const Sanitize = ({ children, sanitizeOptions = {} }) => {
   return sanitizeHtml(children, sanitizeOptions);
 };
+
+export { sanitizeHtml };
