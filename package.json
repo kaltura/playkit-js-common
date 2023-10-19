@@ -75,6 +75,7 @@
   "dependencies": {
     "@playkit-js/playkit-js-ui": "^0.77.1",
     "classnames": "^2.3.2",
-    "linkify-it": "^4.0.1"
+    "linkify-it": "^4.0.1",
+    "sanitize-html": "^2.11.0"
   }
 }
