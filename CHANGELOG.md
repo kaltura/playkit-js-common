@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2023-10-30)
+
+
+### Features
+
+* **FEC-13341:** add file type icons ([#34](https://github.com/kaltura/playkit-js-common/issues/34)) ([e90124d](https://github.com/kaltura/playkit-js-common/commit/e90124d18aa4436540db2851d24bf93ff1d177e2))
+
 ### 1.4.1 (2023-09-22)
 
 ## 1.4.0 (2023-09-14)
