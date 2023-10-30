@@ -20,6 +20,14 @@ import { AnswerOnAir } from './answerOnAir';
 import { ScreenRotation } from './screenRotation';
 import { AutoScroll } from './autoScroll';
 import { ReplayIcon } from './replay';
+import { ClosedCaptions } from "./closedCaptions";
+import { GenericFile } from "./genericFile";
+import { Presentation } from "./presentation";
+import { Image } from "./image";
+import { Document } from "./document";
+import { Excel } from "./excel";
+import { PDF } from "./pdf";
+import { Zip } from "./zip";
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -42,5 +50,13 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   answerOnAir: AnswerOnAir,
   screenRotation: ScreenRotation,
   autoScroll: AutoScroll,
-  replay: ReplayIcon
+  replay: ReplayIcon,
+  closedCaptions: ClosedCaptions,
+  genericFile: GenericFile,
+  presentation: Presentation,
+  image: Image,
+  document: Document,
+  excel: Excel,
+  pdf: PDF,
+  zip: Zip
 };
