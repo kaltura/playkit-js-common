@@ -1,6 +1,6 @@
 {
   "name": "@playkit-js/common",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Pack of utils and ui-components for V7 player and plugins",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
