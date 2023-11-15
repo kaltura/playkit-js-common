@@ -1,0 +1,25 @@
+## Storybook CI/CD
+name: Storybook
+run-name: Storybook
+
+on:
+  push:
+    branches:
+      - FEC-13435-add-volume-icon
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: yarn install
+        run: yarn install
+      - name: build
+        run: yarn build
+      - name: build storybook
+        run: yarn build-storybook
+      - name: deploy storybook
+        run: yarn deploy-storybook
