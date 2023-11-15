@@ -5,7 +5,7 @@ run-name: Storybook
 on:
   push:
     branches:
-      - FEC-13435-add-volume-icon
+      - master
 
 jobs:
   build:
