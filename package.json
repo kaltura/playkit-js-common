@@ -74,7 +74,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@playkit-js/playkit-js-ui": "^0.77.1",
+    "@playkit-js/playkit-js-ui": "^0.77.10",
     "classnames": "^2.3.2",
     "linkify-it": "^4.0.1"
   }
