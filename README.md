@@ -7,6 +7,10 @@
 
 Pack of utils and ui-components for V7 player and plugins.
 
+## Storybook page
+
+https://kaltura.github.io/playkit-js-common
+
 ## How to use
 1. add `@playkit-js/common` into project dependencies (`npm install @playkit-js/common` or if yarn uses `yarn add @playkit-js/common`)
 2. import methods, classes or components to project, f.e: `import { A11yWrapper } from '@playkit-js/common/dist/hoc/a11y-wrapper';`
