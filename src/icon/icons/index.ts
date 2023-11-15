@@ -20,14 +20,16 @@ import { AnswerOnAir } from './answerOnAir';
 import { ScreenRotation } from './screenRotation';
 import { AutoScroll } from './autoScroll';
 import { ReplayIcon } from './replay';
-import { ClosedCaptions } from "./closedCaptions";
-import { GenericFile } from "./genericFile";
-import { Presentation } from "./presentation";
-import { Image } from "./image";
-import { Document } from "./document";
-import { Excel } from "./excel";
-import { PDF } from "./pdf";
-import { Zip } from "./zip";
+import { ClosedCaptions } from './closedCaptions';
+import { GenericFile } from './genericFile';
+import { Presentation } from './presentation';
+import { Image } from './image';
+import { Document } from './document';
+import { Excel } from './excel';
+import { PDF } from './pdf';
+import { Zip } from './zip';
+import { VolumeOn } from './volumeOn';
+import { VolumeMute } from './volumeMute';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -58,5 +60,7 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   document: Document,
   excel: Excel,
   pdf: PDF,
-  zip: Zip
+  zip: Zip,
+  volumeOn: VolumeOn,
+  volumeMute: VolumeMute
 };
