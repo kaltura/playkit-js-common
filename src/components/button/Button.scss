@@ -51,14 +51,14 @@
     }
   }
   &.secondary {
-    background-color: $secondary-color;
-    color: $secondary-text-contrast-color;
+    background-color: $tone-6-color;
+    color: $primary-text-contrast-color;
     &:not(.disabled) {
       &:hover {
-        background-color: $secondary-darker-color;
+        background-color: $tone-5-color;
       }
       &:focus {
-        background-color: $secondary-brighter-color;
+        background-color: $tone-5-color;
       }
     }
   }
