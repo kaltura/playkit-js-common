@@ -50,6 +50,18 @@
       }
     }
   }
+  &.secondary {
+    background-color: $secondary-color;
+    color: $secondary-text-contrast-color;
+    &:not(.disabled) {
+      &:hover {
+        background-color: $secondary-darker-color;
+      }
+      &:focus {
+        background-color: $secondary-brighter-color;
+      }
+    }
+  }
   &.small {
     height: 24px;
     font-size: 13px;
