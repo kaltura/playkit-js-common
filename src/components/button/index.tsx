@@ -17,7 +17,8 @@ export enum ButtonType {
   primary = 'primary',
   danger = 'danger',
   translucent = 'translucent',
-  borderless = 'borderless'
+  borderless = 'borderless',
+  secondary = 'secondary'
 }
 
 export interface TooltipProps {

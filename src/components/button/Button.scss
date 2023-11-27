@@ -50,6 +50,18 @@
       }
     }
   }
+  &.secondary {
+    background-color: $tone-6-color;
+    color: $primary-text-contrast-color;
+    &:not(.disabled) {
+      &:hover {
+        background-color: $tone-5-color;
+      }
+      &:focus {
+        background-color: $tone-5-color;
+      }
+    }
+  }
   &.small {
     height: 24px;
     font-size: 13px;
