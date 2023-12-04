@@ -16,7 +16,14 @@ export default {
     onFocus: { action: 'focus' },
     setRef: { action: 'set ref' },
     type: {
-      options: [ButtonType.primary, ButtonType.danger, ButtonType.translucent, ButtonType.borderless, ButtonType.secondary],
+      options: [
+        ButtonType.primary,
+        ButtonType.danger,
+        ButtonType.translucent,
+        ButtonType.borderless,
+        ButtonType.borderlessTranslucent,
+        ButtonType.secondary
+      ],
       defaultValue: ButtonType.primary,
       control: { type: 'select' }
     },
