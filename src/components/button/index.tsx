@@ -18,6 +18,7 @@ export enum ButtonType {
   danger = 'danger',
   translucent = 'translucent',
   borderless = 'borderless',
+  borderlessTranslucent = 'borderlessTranslucent',
   secondary = 'secondary'
 }
 
