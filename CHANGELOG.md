@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.2 (2023-12-27)
+
+
+### Bug Fixes
+
+* **FEC-13490:** Move manager services from common into ui-managers ([f23d183](https://github.com/kaltura/playkit-js-common/commit/f23d183a7e8a227b9b35e1117ab949386be3ed97))
+
 ### 1.5.1 (2023-11-15)
 
 ## 1.5.0 (2023-10-30)
