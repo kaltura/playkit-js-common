@@ -44,6 +44,7 @@ export interface ButtonProps {
   onBlur?: () => void;
   onFocus?: () => void;
   setRef?: (ref: HTMLButtonElement) => void;
+  loading?: boolean;
 }
 
 export class Button extends Component<ButtonProps> {
@@ -58,10 +59,23 @@ export class Button extends Component<ButtonProps> {
     }
   }
 
+  renderChildren = () => {
+    const { props } = this;
+    if (props.loading) {
+      return (
+        <span>
+          <Icon name={'spinner'} size={IconSize[props.size!]} />
+        </span>
+      );
+    }
+    return props.children ? <span>{props.children}</span> : null;
+  };
+
   renderButton = () => {
     const { props } = this;
     const classNames = classnames(styles.button, styles[props.size!], styles[props.type!], props.className, {
       [styles.disabled]: props.disabled,
+      [styles.loading]: props.loading,
       [styles.withIcon]: props.children && props.icon,
       [styles.iconOnly]: !props.children && props.icon
     });
@@ -69,6 +83,7 @@ export class Button extends Component<ButtonProps> {
       ref: this.buttonRef,
       disabled: props.disabled,
       'aria-disabled': props.disabled,
+      'aria-busy': props.loading,
       tabIndex: props.tabIndex,
       className: classNames,
       ...(props.ariaLabel ? { 'aria-label': props.ariaLabel } : {}),
@@ -80,7 +95,7 @@ export class Button extends Component<ButtonProps> {
       <button {...buttonProps}>
         <Fragment>
           {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
-          {props.children && <span>{props.children}</span>}
+          {this.renderChildren()}
         </Fragment>
       </button>
     );

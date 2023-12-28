@@ -41,6 +41,10 @@ export default {
       defaultValue: false,
       control: 'boolean'
     },
+    loading: {
+      defaultValue: false,
+      control: 'boolean'
+    },
     icon: {
       options: [null, ...Object.keys(Icons)],
       defaultValue: null,
@@ -83,6 +87,7 @@ const Template = (args: ButtonProps) => {
             type={'${args.type}'}
             size={'${args.size}'}
             disabled={${args.disabled}}
+            loading={${args.loading}}
             onClick={(e: OnClickEvent, byKeyboard: boolean) => {}}
             onFocus={(e: FocusEvent) => {}}
             onBlur={(e: FocusEvent) => {}}
