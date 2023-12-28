@@ -1,15 +1,15 @@
-import { VNode,Component } from 'preact';
+import { ComponentChild, Component } from 'preact';
 
 const {
   redux: { connect },
-  reducers: {shell}
+  reducers: { shell }
 } = KalturaPlayer.ui;
 const { createPortal } = KalturaPlayer.ui;
 
 const PORTAL_CLASS = '.overlay-portal';
 
 export interface OverlayPortalProps {
-  children: VNode;
+  children: ComponentChild;
   targetId?: string;
   addPlayerClass?: () => void;
 }
@@ -23,8 +23,8 @@ const mapStateToProps = (state: Record<string, any>) => ({
 const mapDispatchToProps = (dispatch: any) => {
   return {
     addPlayerClass: () => dispatch(shell.actions.addPlayerClass(OVERLAY_ACTIVE_CLASS_NAME))
-  }
-}
+  };
+};
 
 @connect(mapStateToProps, mapDispatchToProps)
 export class OverlayPortal extends Component<OverlayPortalProps> {
@@ -36,7 +36,7 @@ export class OverlayPortal extends Component<OverlayPortalProps> {
       // use timeout 0 to make sure addPlayerClass happens after removePlayerClass
       setTimeout(() => {
         this.props.addPlayerClass!();
-      },0);
+      }, 0);
     }
   }
 
