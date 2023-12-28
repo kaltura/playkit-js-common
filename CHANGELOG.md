@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.3 (2023-12-28)
+
+
+### Bug Fixes
+
+* **FEC-13595:** add loading state to button component ([#42](https://github.com/kaltura/playkit-js-common/issues/42)) ([d08201c](https://github.com/kaltura/playkit-js-common/commit/d08201c067f248a7fd23a9060fc6d154b76473d3))
+
 ### 1.5.2 (2023-12-27)
 
 
