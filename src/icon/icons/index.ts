@@ -30,6 +30,7 @@ import { PDF } from './pdf';
 import { Zip } from './zip';
 import { VolumeOn } from './volumeOn';
 import { VolumeMute } from './volumeMute';
+import { Spinner } from './spinner';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -62,5 +63,6 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   pdf: PDF,
   zip: Zip,
   volumeOn: VolumeOn,
-  volumeMute: VolumeMute
+  volumeMute: VolumeMute,
+  spinner: Spinner
 };

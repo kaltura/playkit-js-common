@@ -44,6 +44,7 @@ export interface ButtonProps {
   onBlur?: () => void;
   onFocus?: () => void;
   setRef?: (ref: HTMLButtonElement) => void;
+  loading?: boolean;
 }
 
 export class Button extends Component<ButtonProps> {
@@ -58,10 +59,31 @@ export class Button extends Component<ButtonProps> {
     }
   }
 
+  renderChildren = () => {
+    const { props } = this;
+    if (props.loading) {
+      return (
+        <Fragment>
+          {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
+          <span>
+            <Icon name={'spinner'} size={IconSize[props.size!]} />
+          </span>
+        </Fragment>
+      );
+    }
+    return (
+      <Fragment>
+        {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
+        {props.children && <span>{props.children}</span>}
+      </Fragment>
+    );
+  };
+
   renderButton = () => {
     const { props } = this;
     const classNames = classnames(styles.button, styles[props.size!], styles[props.type!], props.className, {
       [styles.disabled]: props.disabled,
+      [styles.loading]: props.loading,
       [styles.withIcon]: props.children && props.icon,
       [styles.iconOnly]: !props.children && props.icon
     });
@@ -69,6 +91,7 @@ export class Button extends Component<ButtonProps> {
       ref: this.buttonRef,
       disabled: props.disabled,
       'aria-disabled': props.disabled,
+      'aria-busy': props.loading,
       tabIndex: props.tabIndex,
       className: classNames,
       ...(props.ariaLabel ? { 'aria-label': props.ariaLabel } : {}),
@@ -76,14 +99,7 @@ export class Button extends Component<ButtonProps> {
       ...(props.onFocus ? { onFocus: props.onFocus } : {}),
       ...(props.onBlur ? { onBlur: props.onBlur } : {})
     };
-    const buttonContent = (
-      <button {...buttonProps}>
-        <Fragment>
-          {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
-          {props.children && <span>{props.children}</span>}
-        </Fragment>
-      </button>
-    );
+    const buttonContent = <button {...buttonProps}>{this.renderChildren()}</button>;
 
     return props.onClick ? <A11yWrapper onClick={props.onClick}>{buttonContent}</A11yWrapper> : buttonContent;
   };

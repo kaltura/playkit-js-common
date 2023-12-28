@@ -125,4 +125,8 @@
     border-color: $tone-4-color;
     cursor: default;
   }
+  &.loading {
+    cursor: default;
+    pointer-events: none;
+  }
 }
