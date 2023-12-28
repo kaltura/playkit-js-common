@@ -63,20 +63,12 @@ export class Button extends Component<ButtonProps> {
     const { props } = this;
     if (props.loading) {
       return (
-        <Fragment>
-          {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
-          <span>
-            <Icon name={'spinner'} size={IconSize[props.size!]} />
-          </span>
-        </Fragment>
+        <span>
+          <Icon name={'spinner'} size={IconSize[props.size!]} />
+        </span>
       );
     }
-    return (
-      <Fragment>
-        {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
-        {props.children && <span>{props.children}</span>}
-      </Fragment>
-    );
+    return props.children ? <span>{props.children}</span> : null;
   };
 
   renderButton = () => {
@@ -99,7 +91,14 @@ export class Button extends Component<ButtonProps> {
       ...(props.onFocus ? { onFocus: props.onFocus } : {}),
       ...(props.onBlur ? { onBlur: props.onBlur } : {})
     };
-    const buttonContent = <button {...buttonProps}>{this.renderChildren()}</button>;
+    const buttonContent = (
+      <button {...buttonProps}>
+        <Fragment>
+          {props.icon && <Icon name={props.icon} size={IconSize[props.size!]} />}
+          {this.renderChildren()}
+        </Fragment>
+      </button>
+    );
 
     return props.onClick ? <A11yWrapper onClick={props.onClick}>{buttonContent}</A11yWrapper> : buttonContent;
   };
