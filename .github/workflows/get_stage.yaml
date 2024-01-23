@@ -27,7 +27,7 @@ jobs:
       - name: Output stage
         id: stage
         run: |
-          if [[ "${{ needs.branch-name.outputs.branch-name }}" == "patch-version" ]]; then
+          if [[ "${{ needs.get_branch_name.outputs.branch-name }}" == "patch-version" ]]; then
             stage="patch"
           else
             stage="canary"
