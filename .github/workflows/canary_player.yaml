@@ -48,6 +48,7 @@ jobs:
           echo $stage
           echo "stage=${stage}" >> $GITHUB_OUTPUT
   print_stage:
+    needs: [set_stage]
     runs-on: ubuntu-latest
     steps:
     - name: print stage
