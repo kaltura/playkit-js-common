@@ -1,0 +1,38 @@
+## Get Stage
+name: Get Stage
+run-name: Get Stage
+
+on:
+  workflow_call:
+
+jobs:
+  get_branch_name:
+    runs-on: ubuntu-latest
+    outputs:
+      id: branch-name
+      value: ${{ steps.branch-name.outputs.name }}
+    steps:
+      - name: Output branch name
+        id: name
+        run: |
+          name=${GITHUB_REF#refs/heads/}
+          echo $name
+          echo "name=${name}" >> $GITHUB_OUTPUT
+  set_stage_variable:
+    runs-on: ubuntu-latest
+    outputs:
+      id: stage
+      value: ${{ steps.stage.outputs.stage }}
+    steps:
+      - name: Output stage
+        id: stage
+        run: |
+          if [[ "${{ needs.branch-name.outputs.branch-name }}" == "patch-version" ]]; then
+            stage="patch"
+          else
+            stage="canary"
+          fi
+          echo $stage
+          echo "stage=${stage}" >> $GITHUB_OUTPUT
+
+
