@@ -31,9 +31,11 @@ jobs:
   set_stage:
     uses: ./.github/workflows/get_stage.yaml
   print_stage:
-    run: |
-      echo "stage output -->"
-      echo ${{ needs.set_stage.outputs.stage }}
+    steps:
+    - name: print stage
+      run: |
+        echo "stage output -->"
+        echo ${{ needs.set_stage.outputs.stage }}
 #  canary:
 #    uses: ./.github/workflows/lian_player_cicd.yaml
 #    secrets:
