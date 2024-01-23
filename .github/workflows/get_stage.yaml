@@ -25,8 +25,7 @@ jobs:
       - name: Output stage
         id: stage
         run: |
-          name=${GITHUB_REF#refs/heads/}
-          if [[ $name == "patch-version" ]]; then
+          if [[ ${GITHUB_REF#refs/heads/} == "patch-version" ]]; then
             stage="patch"
           else
             stage="canary"

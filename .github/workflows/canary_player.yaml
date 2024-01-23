@@ -32,7 +32,21 @@ on:
 
 jobs:
   set_stage:
-    uses: ./.github/workflows/get_stage.yaml
+#    uses: ./.github/workflows/get_stage.yaml
+    runs-on: ubuntu-latest
+      outputs:
+        stage: ${{ steps.stage.outputs.stage }}
+      steps:
+        - name: Output stage
+          id: stage
+          run: |
+            if [[ ${GITHUB_REF#refs/heads/} == "patch-version" ]]; then
+              stage="patch"
+            else
+              stage="canary"
+            fi
+            echo $stage
+            echo "stage=${stage}" >> $GITHUB_OUTPUT
   print_stage:
     runs-on: ubuntu-latest
     steps:
