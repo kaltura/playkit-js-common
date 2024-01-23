@@ -3,6 +3,9 @@ name: Base Canary Player Type
 run-name: Base Canary Player Type
 
 on:
+  push:
+    branches:
+      - 'lian-test-canary'
   workflow_call:
     inputs:
       schema-type:
