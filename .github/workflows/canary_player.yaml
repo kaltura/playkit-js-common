@@ -34,6 +34,7 @@ jobs:
   set_stage:
     uses: ./.github/workflows/get_stage.yaml
   print_stage:
+    runs-on: ubuntu-latest
     steps:
     - name: print stage
       run: |
