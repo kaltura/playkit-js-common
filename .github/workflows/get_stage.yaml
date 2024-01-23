@@ -6,17 +6,17 @@ on:
   workflow_call:
 
 jobs:
-  get_branch_name:
-    runs-on: ubuntu-latest
-    outputs:
-      branch-name: ${{ steps.name.outputs.name }}
-    steps:
-      - name: Output branch name
-        id: name
-        run: |
-          name=${GITHUB_REF#refs/heads/}
-          echo $name
-          echo "name=${name}" >> $GITHUB_OUTPUT
+#  get_branch_name:
+#    runs-on: ubuntu-latest
+#    outputs:
+#      branch-name: ${{ steps.name.outputs.name }}
+#    steps:
+#      - name: Output branch name
+#        id: name
+#        run: |
+#          name=${GITHUB_REF#refs/heads/}
+#          echo $name
+#          echo "name=${name}" >> $GITHUB_OUTPUT
   set_stage_variable:
     runs-on: ubuntu-latest
     outputs:
@@ -25,7 +25,8 @@ jobs:
       - name: Output stage
         id: stage
         run: |
-          if [[ "${{ needs.get_branch_name.outputs.branch-name }}" == "patch-version" ]]; then
+          name=${GITHUB_REF#refs/heads/}
+          if [[ "${name}" == "patch-version" ]]; then
             stage="patch"
           else
             stage="canary"
