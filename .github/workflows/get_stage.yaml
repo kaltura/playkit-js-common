@@ -9,8 +9,7 @@ jobs:
   get_branch_name:
     runs-on: ubuntu-latest
     outputs:
-      id: branch-name
-      value: ${{ steps.branch-name.outputs.name }}
+      branch-name: ${{ steps.name.outputs.name }}
     steps:
       - name: Output branch name
         id: name
@@ -21,8 +20,7 @@ jobs:
   set_stage_variable:
     runs-on: ubuntu-latest
     outputs:
-      id: stage
-      value: ${{ steps.stage.outputs.stage }}
+      stage: ${{ steps.stage.outputs.stage }}
     steps:
       - name: Output stage
         id: stage
