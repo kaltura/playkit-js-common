@@ -28,7 +28,10 @@ on:
         default: '17.x'
 
 jobs:
+  set_stage:
+    uses: ./.github/workflows/set_stage_variable.yaml
   canary:
+    needs: set_stage
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
@@ -42,7 +45,7 @@ jobs:
       PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
     with:
       type: "player"
-      stage: "canary"
+      stage: ${{ needs.set_stage.outputs.stage }}
       node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
