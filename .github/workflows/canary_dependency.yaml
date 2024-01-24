@@ -32,7 +32,7 @@ jobs:
 #        echo ${{ needs.set_stage.outputs.stage }}
   canary:
     needs: set_stage
-    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
+    uses: ./.github/workflows/lian_player_cicd.yaml@master
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
       PLAYER_SERVICES_ACCOUNT_ID: ${{ secrets.PLAYER_SERVICES_ACCOUNT_ID }}
