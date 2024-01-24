@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - lian-test-canary
 
 jobs:
   canary:
