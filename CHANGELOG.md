@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.4 (2024-01-31)
+
+
+### Bug Fixes
+
+* **FEC-13673:** keep overlay classname only for overlay component from playkit-ui ([#44](https://github.com/kaltura/playkit-js-common/issues/44)) ([ab649d7](https://github.com/kaltura/playkit-js-common/commit/ab649d7d1eeb5276b587cec1f4e65460b804ee38))
+
 ### 1.5.3 (2023-12-28)
 
 
