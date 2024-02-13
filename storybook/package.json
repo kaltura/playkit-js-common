@@ -5,8 +5,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "storybook:build": "build-storybook",
+    "storybook:deploy": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

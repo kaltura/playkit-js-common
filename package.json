@@ -28,9 +28,9 @@
     "release": "standard-version",
     "pushTaggedRelease": "git push --follow-tags --no-verify origin master",
     "prettier:fix": "prettier --write .",
-    "storybook": "yarn --cwd ./storybook start-storybook -p 6006",
-    "build-storybook": "yarn --cwd ./storybook build-storybook",
-    "deploy-storybook": "yarn --cwd ./storybook deploy-storybook",
+    "storybook": "yarn --cwd ./storybook storybook",
+    "storybook:build": "yarn --cwd ./storybook storybook:build",
+    "storybook:deploy": "yarn --cwd ./storybook storybook:deploy",
     "postinstall": "yarn --cwd ./storybook install"
   },
   "devDependencies": {
