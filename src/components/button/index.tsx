@@ -1,7 +1,6 @@
 import { h, ComponentChild, Fragment, Component, createRef } from 'preact';
 import * as classnames from 'classnames';
 import { ui } from '@playkit-js/kaltura-player-js';
-// import { ToolTipPosition } from '@playkit-js/playkit-js-ui/dist/playkit-js-ui';
 import { A11yWrapper, OnClick } from '../../hoc/a11y-wrapper';
 import { Icon, IconSize } from '../../icon';
 import * as styles from './Button.scss';
