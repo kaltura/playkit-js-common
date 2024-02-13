@@ -7,6 +7,9 @@ import * as styles from './Button.scss';
 
 const { Tooltip } = ui.Components;
 
+// // TODO: import from ui.Components;
+type ToolTipPosition = 'top' | 'bottom' | 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'left' | 'right';
+
 export enum ButtonSize {
   small = 'small',
   medium = 'medium',
@@ -25,7 +28,7 @@ export enum ButtonType {
 export interface TooltipProps {
   label: string;
   className?: string;
-  type?: string;
+  type?: ToolTipPosition;
 }
 
 export interface ButtonProps {
