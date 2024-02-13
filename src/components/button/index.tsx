@@ -1,11 +1,15 @@
 import { h, ComponentChild, Fragment, Component, createRef } from 'preact';
 import * as classnames from 'classnames';
 import { ui } from '@playkit-js/kaltura-player-js';
+// import { ToolTipPosition } from '@playkit-js/playkit-js-ui/dist/playkit-js-ui';
 import { A11yWrapper, OnClick } from '../../hoc/a11y-wrapper';
 import { Icon, IconSize } from '../../icon';
 import * as styles from './Button.scss';
 
 const { Tooltip } = ui.Components;
+
+// // TODO: import from ui.Components;
+type ToolTipPosition = 'top' | 'bottom' | 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'left' | 'right';
 
 export enum ButtonSize {
   small = 'small',
@@ -25,7 +29,7 @@ export enum ButtonType {
 export interface TooltipProps {
   label: string;
   className?: string;
-  type?: string;
+  type?: ToolTipPosition;
 }
 
 export interface ButtonProps {

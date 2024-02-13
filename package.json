@@ -38,7 +38,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@playkit-js/kaltura-player-js": "canary",
+    "@playkit-js/kaltura-player-js": "3.17.9",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -54,7 +54,7 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "gh-pages": "^5.0.0",
-    "preact": "^10.13.0",
+    "preact": "10.4.6",
     "prettier": "^2.8.4",
     "rimraf": "^5.0.5",
     "sass": "^1.52.1",
@@ -68,13 +68,13 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
-    "@playkit-js/kaltura-player-js": "canary"
+    "@playkit-js/kaltura-player-js": "3.17.9"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@playkit-js/playkit-js-ui": "^0.77.10",
+    "@playkit-js/playkit-js-ui": "0.78.0",
     "classnames": "^2.3.2",
     "linkify-it": "^4.0.1"
   }
