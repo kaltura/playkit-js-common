@@ -23,5 +23,5 @@ https://kaltura.github.io/playkit-js-common
 - `release` bump package version and add changes from commits into CHANGELOG
 - `pushTaggedRelease` push latest tag to GitHub repo
 - `storybook` run dev-server for storybook (https://storybook.js.org/docs/preact/get-started/introduction)
-- `build-storybook` create static files for storybook
-- `deploy-storybook` push storybook static files to GitHub pages
+- `storybook:build` create static files for storybook
+- `storybook:deploy` push storybook static files to GitHub pages
