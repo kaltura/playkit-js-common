@@ -30,8 +30,7 @@
     "prettier:fix": "prettier --write .",
     "storybook": "yarn --cwd ./storybook storybook",
     "storybook:build": "yarn --cwd ./storybook storybook:build",
-    "storybook:deploy": "yarn --cwd ./storybook storybook:deploy",
-    "postinstall": "yarn --cwd ./storybook install"
+    "storybook:deploy": "yarn --cwd ./storybook storybook:deploy"
   },
   "devDependencies": {
     "@playkit-js/kaltura-player-js": "3.17.9",
