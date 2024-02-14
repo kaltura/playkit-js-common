@@ -17,6 +17,8 @@ jobs:
           node-version: '18.x'
       - name: yarn install
         run: yarn install
+      - name: install storybook
+        run: yarn storybook:install
       - name: build storybook
         run: yarn storybook:build
       - name: deploy storybook
