@@ -32,13 +32,13 @@ export class OverlayPortal extends Component<OverlayPortalProps> {
   playerContainer: any = document.getElementById(this.props.targetId!) || document;
 
   componentWillUnmount() {
-    // keep playkit-overlay-active class in case OverlayPortal has more children
-    if (this.playerContainer.querySelector(`${PORTAL_CLASS} > ${PLAYKIT_OVERLAY_CLASS}`)) {
-      // use timeout 0 to make sure addPlayerClass happens after removePlayerClass
-      setTimeout(() => {
+    setTimeout(() => {
+      if (this.playerContainer.querySelector(`${PORTAL_CLASS} > ${PLAYKIT_OVERLAY_CLASS}`)) {
+        // keep .playkit-overlay-active class in case OverlayPortal has playkit-ui Overlay as children
         this.props.addPlayerClass!();
-      }, 0);
-    }
+      }
+      // use timeout 0 to make sure check happens after components updated
+    }, 0);
   }
 
   render() {
