@@ -51,16 +51,16 @@
     flex-shrink: 1;
     font-size: 15px;
     padding: 0 6px 1px 6px;
-    color: $tone-1-color;
+    color: var(--playkit-tone-1-color);
     background: transparent;
     border: none;
     overflow: hidden;
     text-overflow: ellipsis;
     &::placeholder {
-      color: $tone-2-color;
+      color: var(--playkit-tone-2-color);
     }
     &::selection {
-      background-color: $primary-brighter-color;
+      background-color: var(--playkit-primary-brighter-color);
     }
   }
   .clear-icon {
@@ -79,8 +79,8 @@
     border-color: $white;
   }
   &.active {
-    color: $tone-2-color;
-    background: $tone-8-color;
+    color: var(--playkit-tone-2-color);
+    background: var(--playkit-tone-8-color);
     border-color: $white;
   }
 }
