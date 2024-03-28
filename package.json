@@ -34,7 +34,7 @@
     "storybook:install": "yarn --cwd ./storybook install"
   },
   "devDependencies": {
-    "@playkit-js/kaltura-player-js": "3.17.9",
+    "@playkit-js/kaltura-player-js": "3.17.11",
     "@types/linkify-it": "^3.0.2",
     "@types/node": "^14.11.2",
     "conventional-github-releaser": "3.1.3",
