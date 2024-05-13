@@ -31,6 +31,8 @@ import { Zip } from './zip';
 import { VolumeOn } from './volumeOn';
 import { VolumeMute } from './volumeMute';
 import { Spinner } from './spinner';
+import { Detach } from './detach';
+import { Attach } from './attach';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -64,5 +66,7 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   zip: Zip,
   volumeOn: VolumeOn,
   volumeMute: VolumeMute,
-  spinner: Spinner
+  spinner: Spinner,
+  detach: Detach,
+  attach: Attach
 };
