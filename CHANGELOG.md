@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.13 (2024-05-13)
+
+
+### Bug Fixes
+
+* **FEC-13686:** add detach-attach buttons ([#47](https://github.com/kaltura/playkit-js-common/issues/47)) ([1b7c688](https://github.com/kaltura/playkit-js-common/commit/1b7c688607134698099b0b956baa17bbb54d8317))
+
 ### 1.5.12 (2024-03-28)
 
 ### 1.5.11 (2024-03-28)
