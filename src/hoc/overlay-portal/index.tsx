@@ -13,7 +13,7 @@ export interface OverlayPortalProps {
   children: ComponentChild;
   targetId?: string;
   addPlayerClass?: () => void;
-  updateOverlay?: (isOpen: boolean) => void;
+  removeOverlay?: () => void;
 }
 
 const OVERLAY_ACTIVE_CLASS_NAME = 'playkit-overlay-active';
@@ -25,7 +25,7 @@ const mapStateToProps = (state: Record<string, any>) => ({
 const mapDispatchToProps = (dispatch: any) => {
   return {
     addPlayerClass: () => dispatch(shell.actions.addPlayerClass(OVERLAY_ACTIVE_CLASS_NAME)),
-    updateOverlay: overlay.actions.updateOverlay
+    removeOverlay: () => dispatch(overlay.actions.updateOverlay(false))
   };
 };
 
@@ -40,7 +40,7 @@ export class OverlayPortal extends Component<OverlayPortalProps> {
         this.props.addPlayerClass!();
       } else {
         // update overlay property in redux store
-        this.props.updateOverlay!(false);
+        this.props.removeOverlay!();
       }
       // use timeout 0 to make sure check happens after components updated
     }, 0);
