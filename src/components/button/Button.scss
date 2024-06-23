@@ -36,7 +36,7 @@
   }
   &.translucent {
     background-color: rgba(0, 0, 0, 0.6);
-    color: var(--playkit-primary-text-contrast-color);
+    color: $white;
   }
   &.borderless {
     background-color: transparent;
