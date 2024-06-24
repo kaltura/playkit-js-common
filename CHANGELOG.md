@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.14 (2024-06-24)
+
+
+### Bug Fixes
+
+* **ADA-1300:** "Hide" button color scheme ([#51](https://github.com/kaltura/playkit-js-common/issues/51)) ([946586b](https://github.com/kaltura/playkit-js-common/commit/946586b2f174d53992817ec19fb242db7f00a5c5))
+
 ### 1.5.13 (2024-05-13)
 
 
