@@ -29,6 +29,7 @@ export interface TooltipProps {
   label: string;
   className?: string;
   type?: ToolTipPosition;
+  strictPosition?: boolean;
 }
 
 export interface ButtonProps {
@@ -111,7 +112,8 @@ export class Button extends Component<ButtonProps> {
       const tooltipProps = {
         label: props.tooltip.label,
         ...(props.tooltip.type ? { type: props.tooltip.type } : {}),
-        ...(props.tooltip.className ? { classNames: props.tooltip.className } : {})
+        ...(props.tooltip.className ? { classNames: props.tooltip.className } : {}),
+        ...(props.tooltip.strictPosition ? { strictPosition: true } : {})
       };
       return <Tooltip {...tooltipProps}>{this.renderButton()}</Tooltip>;
     }
