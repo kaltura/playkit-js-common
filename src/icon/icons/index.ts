@@ -33,6 +33,7 @@ import { VolumeMute } from './volumeMute';
 import { Spinner } from './spinner';
 import { Detach } from './detach';
 import { Attach } from './attach';
+import { Audio } from './audio';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -68,5 +69,6 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   volumeMute: VolumeMute,
   spinner: Spinner,
   detach: Detach,
-  attach: Attach
+  attach: Attach,
+  audio: Audio
 };

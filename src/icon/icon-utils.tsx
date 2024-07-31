@@ -1,5 +1,5 @@
-import {h, ComponentChildren} from 'preact';
-import { Icon } from "./index";
+import { h, ComponentChildren } from 'preact';
+import { Icon } from './index';
 
 export const IconType = {
   // PDF
@@ -24,7 +24,8 @@ export const IconType = {
   XLS: 'xls',
   XLSX: 'xlsx',
   CSV: 'csv',
-  ODS: 'ods'
+  ODS: 'ods',
+  AUDIO: 'audio'
 };
 
 export const getIconByFileExt = (fileExt: string): ComponentChildren => {
@@ -45,6 +46,8 @@ export const getIconByFileExt = (fileExt: string): ComponentChildren => {
     case IconType.PNG:
     case IconType.SVG:
       return <Icon name={'image'} />;
+    case IconType.AUDIO:
+      return <Icon name={'audio'} />;
     case IconType.ZIP:
       return <Icon name={'zip'} />;
     case IconType.XLS:
