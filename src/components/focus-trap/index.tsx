@@ -12,7 +12,7 @@ interface FocusTrapProps {
 
 const FOCUSABLE_ELEMENTS_QUERY = 'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
-const FocusTrap = withEventManager(({ children, active, eventManager }: FocusTrapProps) => {
+export const FocusTrap = withEventManager(({ children, active, eventManager }: FocusTrapProps) => {
   const trapRef = useRef(null);
 
   const setupFocusTrap = useCallback(() => {
@@ -70,5 +70,3 @@ const FocusTrap = withEventManager(({ children, active, eventManager }: FocusTra
 
   return <div ref={trapRef}>{children}</div>;
 });
-
-export { FocusTrap };
