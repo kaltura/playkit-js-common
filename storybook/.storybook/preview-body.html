@@ -1,20 +1,23 @@
-<div id='player-placeholder'></div>
+<div id="player-placeholder"></div>
 <script>
-    var config = {
-        targetId: 'player-placeholder',
-        provider: {
-            partnerId: 1091,
-            env: {
-                cdnUrl: 'https://qa-apache-php7.dev.kaltura.com/',
-                serviceUrl: 'https://qa-apache-php7.dev.kaltura.com/api_v3'
-            }
-        }
-    };
-
-    try {
-        var kalturaPlayer = KalturaPlayer.setup(config);
-        kalturaPlayer.loadMedia({ entryId: '0_wifqaipd' });
-    } catch (e) {
-        console.error(e.message);
+  var config = {
+    targetId: 'player-placeholder',
+    provider: {
+      partnerId: 242,
+      env: {
+        serviceUrl: 'https://api.nvq2.ovp.kaltura.com/api_v3',
+        cdnUrl: 'https://api.nvq2.ovp.kaltura.com',
+        statsServiceUrl: 'https://analytics.rcqa3.kaltura.com',
+        liveStatsServiceUrl: 'https://livestats.nvq2.ovp.kaltura.com',
+        analyticsServiceUrl: 'https://analytics.nvq2.ovp.kaltura.com'
+      }
     }
+  };
+
+  try {
+    var kalturaPlayer = KalturaPlayer.setup(config);
+    kalturaPlayer.loadMedia({ entryId: '0_b8si8hx3' });
+  } catch (e) {
+    console.error(e.message);
+  }
 </script>
