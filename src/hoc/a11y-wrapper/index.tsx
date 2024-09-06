@@ -12,7 +12,7 @@ interface A11yWrapperProps {
   onDownKeyPressed?: (e: KeyboardEvent) => void;
   onLeftKeyPressed?: (e: KeyboardEvent) => void;
   onRightKeyPressed?: (e: KeyboardEvent) => void;
-  role?: string;
+  role?: string | null;
   type?: string;
 }
 
@@ -59,10 +59,13 @@ export const A11yWrapper = ({
     onClick: (e: MouseEvent) => {
       onClick(e, isKeyboardEvent(e));
     },
-    role
   };
   if ((children as VNode)?.type  === 'button') {
     props.type = type || 'button';
+  }
+
+  if (role !== null) {
+    props.role = role;
   }
 
   return cloneElement(children as VNode, props);
