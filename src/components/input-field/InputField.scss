@@ -1,10 +1,6 @@
 @import '../variables.scss';
 
 .input-field-wrapper {
-  ::-moz-placeholder {
-    opacity: 1;
-  }
-
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -82,5 +78,8 @@
     color: var(--playkit-tone-2-color);
     background: var(--playkit-tone-8-color);
     border-color: $white;
+  }
+  ::-moz-placeholder {
+    opacity: 1;
   }
 }
