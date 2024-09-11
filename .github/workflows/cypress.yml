@@ -21,13 +21,13 @@ jobs:
           install: false
           browser: chrome
       - name: Upload video
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
       - name: Upload screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
@@ -52,13 +52,13 @@ jobs:
           install: false
           browser: firefox
       - name: Upload video
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
       - name: Upload screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
@@ -82,13 +82,13 @@ jobs:
           install: false
           browser: edge
       - name: Upload video
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-videos
           path: ./cypress/videos
       - name: Upload screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
@@ -114,13 +114,13 @@ jobs:
   #         install: false
   #         browser: webkit
   #     - name: Upload screenshots
-  #       uses: actions/upload-artifact@v2
+  #       uses: actions/upload-artifact@v3
   #       if: failure()
   #       with:
   #         name: cypress-screenshots
   #         path: ./cypress/screenshots
   #     - name: Upload video
-  #       uses: actions/upload-artifact@v2
+  #       uses: actions/upload-artifact@v3
   #       if: failure()
   #       with:
   #         name: cypress-videos
