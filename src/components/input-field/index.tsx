@@ -77,6 +77,9 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
   private _goToPrevSearchResult = () => {
     const { searchResults } = this.props;
     const { activeSearchIndex, totalSearchResults, onSearchIndexChange } = searchResults!;
+    if (totalSearchResults === 0) {
+      return;
+    }
     let index = 0;
     if (activeSearchIndex !== 1) {
       index = activeSearchIndex - 1;
