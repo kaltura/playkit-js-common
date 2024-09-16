@@ -14,9 +14,7 @@
     background-color: var(--playkit-primary-color);
     color: var(--playkit-primary-text-contrast-color);
     &:not(.disabled) {
-      &:hover {
-        background-color: var(--playkit-primary-darker-color);
-      }
+      &:hover,
       &:focus {
         background-color: var(--playkit-primary-darker-color);
       }
