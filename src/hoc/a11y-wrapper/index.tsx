@@ -1,5 +1,6 @@
 import {cloneElement, ComponentChild, VNode,} from 'preact';
 import { ui } from '@playkit-js/kaltura-player-js';
+import { Env } from '@playkit-js/playkit-js';
 const { ENTER, SPACE, UP, DOWN, LEFT, RIGHT } = ui.utils.KeyMap;
 
 export type OnClickEvent = KeyboardEvent | MouseEvent;
@@ -24,7 +25,9 @@ const stopEvent = (e: KeyboardEvent) => {
 export const isKeyboardEvent = (e: OnClickEvent): boolean => {
   // space/enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
   // check offsetX and offsetY to define keyboard event triggered by NVDA
-  return e instanceof KeyboardEvent || [e.offsetX, e.offsetY].every((offset) => offset === 0);
+  // firefox return offset = 18 in keyboard event and not 0
+  let offsetValue = Env.browser.name === 'Firefox' ? 18 : 0;
+  return e instanceof KeyboardEvent || [e.offsetX, e.offsetY].every((offset) => offset === offsetValue);
 };
 
 export const A11yWrapper = ({
