@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.20 (2024-11-04)
+
+
+### Bug Fixes
+
+* **ADA-1787:** [ORS] - Firefox playerkit - Navigation/Playlist overlay not focused immediately when screen reader (NVDA) is activated ([#66](https://github.com/kaltura/playkit-js-common/issues/66)) ([9b2e373](https://github.com/kaltura/playkit-js-common/commit/9b2e373ab28b192528590871ffe4e9212c75b668))
+
 ### 1.5.19 (2024-09-11)
 
 ### 1.5.18 (2024-09-06)
