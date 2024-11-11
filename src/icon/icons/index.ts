@@ -34,6 +34,8 @@ import { Spinner } from './spinner';
 import { Detach } from './detach';
 import { Attach } from './attach';
 import { Audio } from './audio';
+import { ChevronRight } from './chevronRight';
+import { Check } from './check';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -70,5 +72,7 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   spinner: Spinner,
   detach: Detach,
   attach: Attach,
-  audio: Audio
+  audio: Audio,
+  chevronRight: ChevronRight,
+  check: Check
 };
