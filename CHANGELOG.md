@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.21 (2024-11-11)
+
+
+### Bug Fixes
+
+* **FEC-14118:** add more icons ([#67](https://github.com/kaltura/playkit-js-common/issues/67)) ([1e7a370](https://github.com/kaltura/playkit-js-common/commit/1e7a37078524339e6cbc67b2086201a48c9f33cf))
+
 ### 1.5.20 (2024-11-04)
 
 
