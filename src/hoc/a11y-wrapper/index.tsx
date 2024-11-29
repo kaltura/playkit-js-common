@@ -24,7 +24,7 @@ const stopEvent = (e: KeyboardEvent) => {
 export const isKeyboardEvent = (e: OnClickEvent): boolean => {
   // space/enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
   // check type and pointerType to define keyboard event triggered by NVDA
-  return e instanceof KeyboardEvent || !(e.type === 'click' && (e as PointerEvent).pointerType);
+  return e instanceof KeyboardEvent || !(e instanceof PointerEvent && e.pointerType);
 };
 
 export const A11yWrapper = ({
