@@ -22,9 +22,16 @@ const stopEvent = (e: KeyboardEvent) => {
 };
 
 export const isKeyboardEvent = (e: OnClickEvent): boolean => {
-  // space/enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
-  // check pointerType to define keyboard event triggered by NVDA
-  return e instanceof KeyboardEvent || (e instanceof PointerEvent && !e.pointerType);
+  if (e instanceof KeyboardEvent) {
+    return true;
+  }
+  // Space/Enter keyEvent is swallowed by NVDA (https://github.com/nvaccess/nvda/issues/7898)
+  // check additional PointerEvent props to determine if it was triggered by keyboard
+  if (e instanceof PointerEvent) {
+    // Chrome has offsetX/offsetY as 0, FF doesn't have pointerType
+    return [e.offsetX, e.offsetY].every((offset) => offset === 0) || !e.pointerType;
+  }
+  return false;
 };
 
 export const A11yWrapper = ({
