@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.22 (2024-11-29)
+
+
+### Bug Fixes
+
+* **ADA-1787:** define NVDA shallow events ([#71](https://github.com/kaltura/playkit-js-common/issues/71)) ([ce8c495](https://github.com/kaltura/playkit-js-common/commit/ce8c495e3a371d8eed68d0afbe1486707c5a3338))
+
 ### 1.5.21 (2024-11-11)
 
 
