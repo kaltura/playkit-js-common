@@ -90,6 +90,7 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
   };
 
   private _renderSearchResults = () => {
+    const isDisabled = this.props.searchResults!.totalSearchResults === 0
     return (
       <Fragment>
         <div className={styles.searchResults} aria-live="polite" aria-label={this.props.searchResults!.searchResultsLabel}>{`${
@@ -101,10 +102,8 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
           {this.props.value && (
             <A11yWrapper onClick={this._goToPrevSearchResult}>
               <button
-                tabIndex={0}
-                className={`${styles.prevNextButton} ${
-                  this.props.searchResults!.totalSearchResults === 0 ? styles.disabled : ''
-                }`}
+                tabIndex={isDisabled ? -1 : 0}
+                className={`${styles.prevNextButton} ${isDisabled ? styles.disabled : ''}`}
                 aria-label={this.props.searchResults!.prevMatchLabel}
               >
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -120,10 +119,8 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
           {this.props.value && (
             <A11yWrapper onClick={this._goToNextSearchResult}>
               <button
-                tabIndex={0}
-                className={`${styles.prevNextButton} ${
-                  this.props.searchResults!.totalSearchResults === 0 ? styles.disabled : ''
-                }`}
+                tabIndex={isDisabled ? -1 : 0}
+                className={`${styles.prevNextButton} ${isDisabled ? styles.disabled : ''}`}
                 aria-label={this.props.searchResults!.nextMatchLabel}
               >
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
