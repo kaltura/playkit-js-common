@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.5.23 (2025-01-14)
+
+
+### Bug Fixes
+
+* **ADA-1961:** Disabled previous search and next search receive keyboard tab focus ([#72](https://github.com/kaltura/playkit-js-common/issues/72)) ([1da3469](https://github.com/kaltura/playkit-js-common/commit/1da34690c355aed2c0970576e57d1037f1313c0c))
+
 ### 1.5.22 (2024-11-29)
 
 
