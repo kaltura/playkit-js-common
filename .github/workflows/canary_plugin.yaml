@@ -67,7 +67,7 @@ jobs:
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
-          curl -L \
+          curl -L --fail \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.REPO_DISPATCH_TOKEN }}" \
