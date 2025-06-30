@@ -82,4 +82,7 @@
     background: var(--playkit-tone-8-color);
     border-color: $white;
   }
+  ::-moz-placeholder {
+    opacity: 1;
+  }
 }
