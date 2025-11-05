@@ -93,11 +93,15 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
     const isDisabled = this.props.searchResults!.totalSearchResults === 0
     return (
       <Fragment>
-        <div className={styles.searchResults} aria-live="polite" aria-label={this.props.searchResults!.searchResultsLabel}>{`${
-          this.props.searchResults!.totalSearchResults > 0
-            ? `${this.props.searchResults!.activeSearchIndex}/${this.props.searchResults!.totalSearchResults}`
-            : '0/0'
-        }`}</div>
+        <div className={styles.searchResults} aria-live="polite">
+          <span aria-label={this.props.searchResults!.searchResultsLabel}>
+            {`${
+              this.props.searchResults!.totalSearchResults > 0
+                ? `${this.props.searchResults!.activeSearchIndex}/${this.props.searchResults!.totalSearchResults}`
+                : '0/0'
+            }`}
+          </span>
+        </div>
         <div className={styles.prevNextWrapper}>
           {this.props.value && (
             <A11yWrapper onClick={this._goToPrevSearchResult}>
