@@ -59,7 +59,6 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
       active: false
     });
   };
-
   private _goToNextSearchResult = () => {
     const { searchResults } = this.props;
     const { activeSearchIndex, totalSearchResults, onSearchIndexChange } = searchResults!;
