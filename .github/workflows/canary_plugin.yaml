@@ -37,8 +37,15 @@ on:
 jobs:
   set_stage:
     uses: ./.github/workflows/set_stage_variable.yaml
+  kaltura_tools_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Kaltura Tools Check
+        uses: kaltura/kaltura-tools@main
+        with:
+          repo-path: '${{ github.workspace }}'
   canary:
-    needs: set_stage
+    needs: [set_stage, kaltura_tools_check]
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
