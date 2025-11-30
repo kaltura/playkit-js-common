@@ -39,7 +39,7 @@ jobs:
     uses: ./.github/workflows/set_stage_variable.yaml
   canary:
     needs: set_stage
-    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
+    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@test-canary-security-fix
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
       PLAYER_SERVICES_ACCOUNT_ID: ${{ secrets.PLAYER_SERVICES_ACCOUNT_ID }}
