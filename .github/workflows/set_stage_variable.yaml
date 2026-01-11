@@ -6,7 +6,7 @@ on:
   workflow_call:
     outputs:
       stage:
-        description: "stage"
+        description: 'stage'
         value: ${{ jobs.set_stage_variable.outputs.stage }}
 
 jobs:

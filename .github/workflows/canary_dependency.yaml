@@ -14,10 +14,10 @@ on:
         required: true
         type: string
       node-version:
-        description: "which node version to use - example: '17.x/18.x'"
+        description: "which node version to use - example: '17.x/18.x/24.x'"
         required: false
         type: string
-        default: '17.x'
+        default: '24.x'
 
 jobs:
   set_stage:
@@ -36,10 +36,8 @@ jobs:
       PLAYER_GITHUB_BOT_TOKEN: ${{ secrets.PLAYER_GITHUB_BOT_TOKEN }}
       PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
     with:
-      type: "dependency"
+      type: 'dependency'
       stage: ${{ needs.set_stage.outputs.stage }}
       node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
-
-

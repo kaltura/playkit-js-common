@@ -90,7 +90,7 @@ export class InputField extends Component<InputFieldProps, InputFieldState> {
   };
 
   private _renderSearchResults = () => {
-    const isDisabled = this.props.searchResults!.totalSearchResults === 0
+    const isDisabled = this.props.searchResults!.totalSearchResults === 0;
     return (
       <Fragment>
         <div className={styles.searchResults} aria-live="polite">
