@@ -1,25 +1,25 @@
 on:
   workflow_call:
     inputs:
-        pluginPath:
-          description: "The folder name of the plugin"
-          required: true
-          type: string
-        prefix:
-          description: "The version prefix"
-          required: true
-          type: string          
- 
+      pluginPath:
+        description: 'The folder name of the plugin'
+        required: true
+        type: string
+      prefix:
+        description: 'The version prefix'
+        required: true
+        type: string
+
 jobs:
   # This workflow contains a single job called "build"
   build:
     environment: common
     runs-on: ubuntu-latest
     steps:
-      - name: print event type 
+      - name: print event type
         run: |
-             echo "event name is:" ${{ github.event_name }} 
-             echo "Version perfix is:" ${{ inputs.prefix }}
+          echo "event name is:" ${{ github.event_name }} 
+          echo "Version perfix is:" ${{ inputs.prefix }}
       - uses: actions/checkout@v3
       - name: print pwd
         run: |
@@ -52,9 +52,9 @@ jobs:
           echo ${newVersion} > VERSION.txt
           sed -iE "s/$currentVersion/$newVersion/g" package.json
           sed -iE "s/$currentVersion/$newVersion/g" CHANGELOG.md
-      - name: build 
+      - name: build
         run: yarn run build
-      - name: copy tranlation files 
+      - name: copy tranlation files
         run: |
           if [ -d "translations" ]; then
             mkdir ./dist/translations

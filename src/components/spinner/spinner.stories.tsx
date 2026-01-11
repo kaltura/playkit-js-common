@@ -52,4 +52,4 @@ const Template = (args: SpinnerProps) => {
 };
 
 export const Spinner: any = Template.bind({});
-Spinner.args = { size: 48};
+Spinner.args = { size: 48 };

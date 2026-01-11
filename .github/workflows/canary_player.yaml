@@ -44,12 +44,10 @@ jobs:
       PLAYER_GITHUB_BOT_TOKEN: ${{ secrets.PLAYER_GITHUB_BOT_TOKEN }}
       PLAYER_GITHUB_KCONF_TOKEN: ${{ secrets.PLAYER_GITHUB_KCONF_TOKEN }}
     with:
-      type: "player"
+      type: 'player'
       stage: ${{ needs.set_stage.outputs.stage }}
       node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
       tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
       yarn-upgrade-list: ${{ inputs.yarn-upgrade-list }}
       player-type: ${{ inputs.player-type }}
-
-
