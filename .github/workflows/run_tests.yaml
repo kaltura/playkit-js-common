@@ -16,7 +16,7 @@ jobs:
     uses: kaltura/ovp-pipelines-pub/.github/workflows/player_tests.yaml@master
     with:
       yarn-run-to-execute: 'build'
-      node-version: "18.x"
+      node-version: "24.x"
   notification:
     if: always()
     uses: kaltura/ovp-pipelines-pub/.github/workflows/notification.yaml@master

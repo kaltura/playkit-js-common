@@ -27,7 +27,7 @@ jobs:
           ls -l
       - uses: actions/setup-node@v3
         with:
-          node-version: 'v14.20.0'
+          node-version: '24.x'
       - name: yarn install
         run: |
           yarn install
