@@ -129,6 +129,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Create temporary .npmrc
+        run: |
+          echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
+      - name: Preinstall
+        run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Remove temporary .npmrc
+        run: rm -f .npmrc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
@@ -149,9 +159,3 @@ jobs:
         with:
           name: cypress-screenshots
           path: ./cypress/screenshots
-      - name: Upload video
-        uses: actions/upload-artifact@v4
-  #       if: failure()
-  #       with:
-  #         name: cypress-videos
-  #         path: ./cypress/videos
