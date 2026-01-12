@@ -23,7 +23,7 @@ jobs:
         with:
           runTests: false
       - name: Build
-        run: yarn run test:prepare
+        run: npm run test:prepare
       - name: E2E on Chrome
         uses: cypress-io/github-action@v5
         with:
@@ -64,7 +64,7 @@ jobs:
           build: npx playwright install-deps webkit
           runTests: false
       - name: Build
-        run: yarn run test:prepare
+        run: npm run test:prepare
       - name: E2E on Firefox
         uses: cypress-io/github-action@v5
         with:
