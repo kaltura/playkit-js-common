@@ -123,34 +123,34 @@ jobs:
         with:
           name: cypress-screenshots
           path: ./cypress/screenshots
-  # safari:
-  #   runs-on: ubuntu-22.04
-  #   name: E2E on Safari
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     - name: Install dependencies
-  #       uses: cypress-io/github-action@v5
-  #       with:
-  #         # install WebKit browser dependencies
-  #         build: npx playwright install-deps webkit
-  #         runTests: false
-  #     - name: Build
-  #       run: yarn run test:prepare
-  #     - name: E2E on Safari
-  #       uses: cypress-io/github-action@v5
-  #       with:
-  #         config: video=true
-  #         install: false
-  #         browser: webkit
-  #     - name: Upload screenshots
-  #       uses: actions/upload-artifact@v4
-  #       if: failure()
-  #       with:
-  #         name: cypress-screenshots
-  #         path: ./cypress/screenshots
-  #     - name: Upload video
-  #       uses: actions/upload-artifact@v4
+  safari:
+    runs-on: ubuntu-22.04
+    name: E2E on Safari
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5
+        with:
+          # install WebKit browser dependencies
+          build: npx playwright install-deps webkit
+          runTests: false
+      - name: Build
+        run: yarn run test:prepare
+      - name: E2E on Safari
+        uses: cypress-io/github-action@v5
+        with:
+          config: video=true
+          install: false
+          browser: webkit
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
+      - name: Upload video
+        uses: actions/upload-artifact@v4
   #       if: failure()
   #       with:
   #         name: cypress-videos
