@@ -18,6 +18,13 @@ jobs:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Remove temporary .npmrc
         run: rm -f .npmrc
+      - name: Setup JFrog
+        uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog
+        env:
+          JF_URL: https://kalturaa.jfrog.io
+        with:
+          oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
