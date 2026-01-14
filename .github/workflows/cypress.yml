@@ -147,6 +147,7 @@ jobs:
         run: yarn run test:prepare
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: E2E on Edge
         uses: cypress-io/github-action@v5
         with:
