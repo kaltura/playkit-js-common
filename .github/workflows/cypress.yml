@@ -30,7 +30,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          install-command: npm install --verbose
+          install-command: npm install --verbose --force
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -85,7 +85,7 @@ jobs:
         with:
           build: npx playwright install-deps webkit
           runTests: false
-          install-command: npm install --verbose --legacy-peer-deps
+          install-command: npm install --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -118,20 +118,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Create temporary .npmrc
-        run: |
-          echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
+      # - name: Create temporary .npmrc
+      #   run: |
+      #     echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
+      #     echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
       - name: Preinstall
         run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Remove temporary .npmrc
-        run: rm -f .npmrc
+      # - name: Remove temporary .npmrc
+      #   run: rm -f .npmrc
+      - name: Setup JFrog
+        uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog
+        env:
+          JF_URL: https://kalturaa.jfrog.io
+        with:
+          oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
           runTests: false
+          install-command: npm install --verbose
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: Build
         run: yarn run test:prepare
       - name: E2E on Edge
