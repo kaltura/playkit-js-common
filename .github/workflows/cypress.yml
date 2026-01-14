@@ -63,7 +63,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      #  - name: Create temporary .npmrc
+      #  - name: Create temporary .npmrc # TODO delete these sections or update them to work with jfrog
       #    run: |
       #      echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
       #      echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
