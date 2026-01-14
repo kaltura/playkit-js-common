@@ -30,7 +30,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          install-command: npm install --verbose --legacy-peer-deps
+          install-command: npm install --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -63,16 +63,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-    #  - name: Create temporary .npmrc
-    #    run: |
-    #      echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
-    #      echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
+      #  - name: Create temporary .npmrc
+      #    run: |
+      #      echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
+      #      echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
       - name: Preinstall
         run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #  - name: Remove temporary .npmrc
-    #    run: rm -f .npmrc
+      #  - name: Remove temporary .npmrc
+      #    run: rm -f .npmrc
       - name: Setup JFrog
         uses: jfrog/setup-jfrog-cli@v4
         id: setup-jfrog
