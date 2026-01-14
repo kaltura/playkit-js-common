@@ -145,14 +145,14 @@ jobs:
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: Build
         run: yarn run test:prepare
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: E2E on Edge
         uses: cypress-io/github-action@v5
         with:
           config: video=true
           install: false
           browser: edge
-        env:
-          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload video
         uses: actions/upload-artifact@v4
         if: failure()
