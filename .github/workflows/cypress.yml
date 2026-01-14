@@ -26,11 +26,11 @@ jobs:
         with:
           oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
-        run: npm install --verbose --legacy-peer-deps
-        # uses: cypress-io/github-action@v5
-        # with:
-        #   runTests: false
-        #   install-command: npm install --verbose --legacy-peer-deps
+        # run: npm install --verbose --legacy-peer-deps
+        uses: cypress-io/github-action@v5
+        with:
+          runTests: false
+          install-command: npm install --verbose --legacy-peer-deps
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
