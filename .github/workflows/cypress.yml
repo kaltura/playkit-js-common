@@ -23,8 +23,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          # TODO
-          install-command: npm install --verbose
+          install-command: npm ci --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -73,8 +72,7 @@ jobs:
         with:
           build: npx playwright install-deps webkit
           runTests: false
-          # TODO
-          install-command: npm install --verbose
+          install-command: npm ci --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -122,8 +120,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          # TODO
-          install-command: npm install --verbose
+          install-command: npm ci --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
