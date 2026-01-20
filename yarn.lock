@@ -52,51 +52,61 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@playkit-js/kaltura-player-js@3.17.11":
-  version "3.17.11"
-  resolved "https://registry.yarnpkg.com/@playkit-js/kaltura-player-js/-/kaltura-player-js-3.17.11.tgz#b229a4fda581d4ff5f33918e0fcbac6ffbd65006"
-  integrity sha512-7U4zW6o2tdUMNALtLHz2lQHrCCU5zik0ty7Py02WKfsrOdJZi1TvnYEikmDY+tOqwSJzK9HOFgYq4034KDlu+A==
+"@playkit-js/kaltura-player-js@3.17.71":
+  version "3.17.71"
+  resolved "https://registry.yarnpkg.com/@playkit-js/kaltura-player-js/-/kaltura-player-js-3.17.71.tgz#ea3b0fb2b235f4c39dd9c7858a2e51c6711a9f5f"
+  integrity sha512-tAGDPeoV1jkq0yMx0IWnfGh8+ItFOvod54vUXspgwQ6hZ0UuAXs24dgGHvW0MPmT/Y8RGgSa3uawW8akxY1A1A==
   dependencies:
-    "@playkit-js/playkit-js" "0.84.6"
-    "@playkit-js/playkit-js-dash" "1.36.3"
-    "@playkit-js/playkit-js-hls" "1.32.11"
-    "@playkit-js/playkit-js-providers" "2.40.4"
-    "@playkit-js/playkit-js-ui" "0.78.2"
-    hls.js "1.4.11"
-    shaka-player "4.7.0"
+    "@playkit-js/playkit-js" "0.84.37"
+    "@playkit-js/playkit-js-dash" "1.39.2"
+    "@playkit-js/playkit-js-hls" "1.32.21"
+    "@playkit-js/playkit-js-providers" "2.44.1"
+    "@playkit-js/playkit-js-ui" "0.82.14-canary.0-34f2c93"
+    "@playkit-js/webpack-common" "^1.0.3"
+    hls.js "1.6.12"
+    shaka-player "4.14.9"
 
-"@playkit-js/playkit-js-dash@1.36.3":
-  version "1.36.3"
-  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-dash/-/playkit-js-dash-1.36.3.tgz#1d0490646d851db704fb899acba8ba14bd320e7b"
-  integrity sha512-kYzyVdXqIXQd/TyzDwLvaN2tvDhOcaT1u6uoZsRwBQXmm1hKwoBWHnWuUiFoE2AdVZzvi0CFsC4WqMFPKF5o8Q==
-
-"@playkit-js/playkit-js-hls@1.32.11":
-  version "1.32.11"
-  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-hls/-/playkit-js-hls-1.32.11.tgz#0d4d514750a660e9899d04e97482af6311355707"
-  integrity sha512-YWhFAYeBpONeENRQbmm6901FtkT4vwzu8O5mzrrty7TUGR3zXpBGszul1bngAZQWS6UZ5vpuvAuLSz+37BFUpg==
-
-"@playkit-js/playkit-js-providers@2.40.4":
-  version "2.40.4"
-  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-providers/-/playkit-js-providers-2.40.4.tgz#181651986ab484c202f0f7805bc301b6e11df6d5"
-  integrity sha512-nnBaWjNvPcg6jRyEsuNJrKK0HWaKm46onqXV/HBesbwxJT/u/l01h3oJl7VkUB6hmZOMQuWGg3/QCdvswwQsRg==
-
-"@playkit-js/playkit-js-ui@0.78.2":
-  version "0.78.2"
-  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-ui/-/playkit-js-ui-0.78.2.tgz#4d6f90a4ae30cdec87eb6da4911b59a673a953ed"
-  integrity sha512-rux2HNS0deqwy3ve3XMoUoaXIRI4hHrs7UeQd5sEOy38YkiLlEcahjvAcCYSV8dIO60eEWLfMid0zUxrQXD70w==
+"@playkit-js/playkit-js-dash@1.39.2":
+  version "1.39.2"
+  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-dash/-/playkit-js-dash-1.39.2.tgz#bb8fe0b8c0b7db4f75165560ee36aeb4e857df76"
+  integrity sha512-Wm3Wk9DpADBEz0DGjeiSnuZEfuHwDMK+6Ud49766nxke4WNo+zdArYmEwoYqWKwxkHsFtrpABuw4QmasF32aNg==
   dependencies:
+    "@playkit-js/webpack-common" "^1.0.3"
+
+"@playkit-js/playkit-js-hls@1.32.21":
+  version "1.32.21"
+  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-hls/-/playkit-js-hls-1.32.21.tgz#daff0b41095290bd5bd1c963f6b9404682c30739"
+  integrity sha512-Y6OD0rNOBP0LZ2qpf7BzsSuf5OWTznE9RXVCqQyMPG0HIJKD8EbkYk0ny1v30fxL797vspJRzHkoe0hrtqMJ4w==
+
+"@playkit-js/playkit-js-providers@2.44.1":
+  version "2.44.1"
+  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-providers/-/playkit-js-providers-2.44.1.tgz#b890760c0c2fe3c3a8e949a21049fde95dece913"
+  integrity sha512-lvSTrvu02CntMrIKvE5X+dHW5KUJd2YtJSEggV2PQDy7OW/Pku9tGPqtTCvf6KVVk3PfjDosOc4VBoenMgFycA==
+
+"@playkit-js/playkit-js-ui@0.82.14-canary.0-34f2c93":
+  version "0.82.14-canary.0-34f2c93"
+  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js-ui/-/playkit-js-ui-0.82.14-canary.0-34f2c93.tgz#170ea32b1e59c2a2d2dff66de57b028c06067407"
+  integrity sha512-26WeoTbL1rFzgg2NlirStCOrW5RrnLdUrtl0bTZhwX0qHdPegzVbqSPH6qHkdHAtAxerbo/zo2qWDgvhecddwA==
+  dependencies:
+    "@playkit-js/webpack-common" "^1.0.3"
     preact "10.4.6"
     preact-i18n "2.0.0-preactx.2"
     react-redux "7.2.1"
     redux "4.0.5"
 
-"@playkit-js/playkit-js@0.84.6":
-  version "0.84.6"
-  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js/-/playkit-js-0.84.6.tgz#1187d142b030794693dc2547130436e967fbbb69"
-  integrity sha512-p+0GHJ6pWPAxHaUEe3k12zPvkFhdreeAsuZ7p5jdGcqMncq1zYlTU9GjejTqf7fMPNerxKYbPtp7beB+5x+RmA==
+"@playkit-js/playkit-js@0.84.37":
+  version "0.84.37"
+  resolved "https://registry.yarnpkg.com/@playkit-js/playkit-js/-/playkit-js-0.84.37.tgz#a16c8ac62af3771d585924362a90001cede77397"
+  integrity sha512-ReZcQ/kUpBeudrjzOM0xZjJ2r3bK3/xEAWtL5WVJkpVCTQbiz77u9e3filiD4dn6a7HEOepdjD4f4LGuw2oNog==
   dependencies:
+    "@playkit-js/webpack-common" "^1.0.3"
     js-logger "^1.6.0"
     ua-parser-js "^1.0.36"
+
+"@playkit-js/webpack-common@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@playkit-js/webpack-common/-/webpack-common-1.0.3.tgz#e7d47c6cd6ade579a160b08ccbe74889a567fcb6"
+  integrity sha512-qOkBsANu1ZloqWzan9lyU8jrrCVVH3KpCr1etXJI/UBTM84cGbvxIy8mHiXifenXjmGgKIGtnkNJt654Y1GMcg==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -737,10 +747,10 @@ eastasianwidth@^0.2.0:
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
-eme-encryption-scheme-polyfill@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/eme-encryption-scheme-polyfill/-/eme-encryption-scheme-polyfill-2.1.1.tgz#91c823ed584e8ec5a9f03a6a676def8f80c57a4c"
-  integrity sha512-njD17wcUrbqCj0ArpLu5zWXtaiupHb/2fIUQGdInf83GlI+Q6mmqaPGLdrke4savKAu15J/z1Tg/ivDgl14g0g==
+eme-encryption-scheme-polyfill@^2.2.1:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/eme-encryption-scheme-polyfill/-/eme-encryption-scheme-polyfill-2.2.4.tgz#6279f3b773c8083bf78557513cf64173e283abdc"
+  integrity sha512-04RxnYXZhddE7VFZ8OPoCR5lX1agj9vp1WIr4YfZgx3rMuYLQl0V1ycb9cw9HvW9kIefXqeFDrCUsy2regUguw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1036,10 +1046,10 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hls.js@1.4.11:
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.4.11.tgz#6ca2d7ab56f2725f27bb5f2e3c7982c6ec287118"
-  integrity sha512-rhPSUMACcIBbcUnwWnIcRgGXqJJt0xBRxvhzl99XpGHtnnLKjbczmmBmUuQueAQcbL3SdN7D5peAObR18VrhvQ==
+hls.js@1.6.12:
+  version "1.6.12"
+  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.6.12.tgz#a130d2b902bd1e1a30b4d9db9676f3dba3187629"
+  integrity sha512-Pz+7IzvkbAht/zXvwLzA/stUHNqztqKvlLbfpq6ZYU68+gZ+CZMlsbQBPUviRap+3IQ41E39ke7Ia+yvhsehEQ==
 
 hoist-non-react-statics@^3.3.0:
   version "3.3.2"
@@ -2059,12 +2069,12 @@ semver@^7.1.1, semver@^7.3.4, semver@^7.3.5:
   dependencies:
     lru-cache "^6.0.0"
 
-shaka-player@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-4.7.0.tgz#5bb0a60c1b7c2a8a3c2d1ff82e632c3c000219c3"
-  integrity sha512-utR9hKMt8GiGv7EDC8/nh8F1c4KeVGa4Wd8k6h+g2Ylks0m9//kvxvXkQnYAGJRtdql/CJC9Ur8YQ/G+kTwoiQ==
+shaka-player@4.14.9:
+  version "4.14.9"
+  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-4.14.9.tgz#66c6fe7437ae40b7bbbdb96ae4251998b62595ae"
+  integrity sha512-0YZJ+UUHBz3meAzN/eOvjNoLH7eCG1yHP3BFH8ZnFbGf3K50DgLWNMoV6bm6pH4cndvXem+SdcQRXabItD4RBA==
   dependencies:
-    eme-encryption-scheme-polyfill "^2.1.1"
+    eme-encryption-scheme-polyfill "^2.2.1"
 
 shebang-command@^2.0.0:
   version "2.0.0"
@@ -2172,7 +2182,16 @@ strict-uri-encode@^1.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
   integrity sha512-R3f198pcvnB+5IpnBlRkphuE9n46WyVl8I39W/ZUTZLz4nqSP/oLYUrcnJrw462Ds8he4YKMov2efsTIw1BDGQ==
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -2214,7 +2233,14 @@ stringify-package@^1.0.1:
   resolved "https://registry.yarnpkg.com/stringify-package/-/stringify-package-1.0.1.tgz#e5aa3643e7f74d0f28628b72f3dad5cecfc3ba85"
   integrity sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -2419,7 +2445,16 @@ wordwrap@^1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
