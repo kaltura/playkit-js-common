@@ -23,7 +23,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          install-command: npm install --verbose --force # TODO upgrade kaltura-player-js version in playkit-js-common
+          # TODO
+          install-command: npm install --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -72,7 +73,8 @@ jobs:
         with:
           build: npx playwright install-deps webkit
           runTests: false
-          install-command: npm install --verbose --force # TODO upgrade kaltura-player-js version in playkit-js-common
+          # TODO
+          install-command: npm install --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
@@ -120,7 +122,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          install-command: npm install --verbose --force # TODO upgrade kaltura-player-js version in playkit-js-common
+          # TODO
+          install-command: npm install --verbose
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
