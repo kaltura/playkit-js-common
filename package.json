@@ -1,6 +1,6 @@
 {
   "name": "@playkit-js/common",
-  "version": "1.5.25",
+  "version": "1.5.26",
   "description": "Pack of utils and ui-components for V7 player and plugins",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
     "playkit-js"
   ],
   "scripts": {
-    "preinstall": "npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.",
+    "disabled-preinstall": "npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.",
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc",
