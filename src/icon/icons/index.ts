@@ -36,6 +36,7 @@ import { Attach } from './attach';
 import { Audio } from './audio';
 import { ChevronRight } from './chevronRight';
 import { Check } from './check';
+import { Transcript } from './transcript';
 
 export const Icons: Record<string, () => h.JSX.Element> = {
   close: Close,
@@ -74,5 +75,6 @@ export const Icons: Record<string, () => h.JSX.Element> = {
   attach: Attach,
   audio: Audio,
   chevronRight: ChevronRight,
-  check: Check
+  check: Check,
+  transcript: Transcript
 };
