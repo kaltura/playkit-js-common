@@ -7,30 +7,35 @@ jobs:
     name: E2E on Chrome
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Create temporary .npmrc
-        run: |
-          echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
+        uses: actions/checkout@v4
       - name: Preinstall
         run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Remove temporary .npmrc
-        run: rm -f .npmrc
-      - name: Disable preinstall
-        working-directory: ${{ github.workspace }}
-        run: |
-          sed -i.bak 's/"preinstall":/"disabled-preinstall":/' package.json
-          rm package.json.bak
-
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Setup JFrog
+        uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog
+        env:
+          JF_URL: https://kalturaa.jfrog.io
+        with:
+          oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
           runTests: false
+          install-command: npm ci --verbose
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: Build
-        run: yarn run test:prepare
+        run: npm run test:prepare
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: E2E on Chrome
         uses: cypress-io/github-action@v5
         with:
@@ -54,31 +59,36 @@ jobs:
     name: E2E on Firefox
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Create temporary .npmrc
-        run: |
-          echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
+        uses: actions/checkout@v4
       - name: Preinstall
         run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Remove temporary .npmrc
-        run: rm -f .npmrc
-      - name: Disable preinstall
-        working-directory: ${{ github.workspace }}
-        run: |
-          sed -i.bak 's/"preinstall":/"disabled-preinstall":/' package.json
-          rm package.json.bak
-
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Setup JFrog
+        uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog
+        env:
+          JF_URL: https://kalturaa.jfrog.io
+        with:
+          oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
           build: npx playwright install-deps webkit
           runTests: false
+          install-command: npm ci --verbose
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: Build
-        run: yarn run test:prepare
+        run: npm run test:prepare
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: E2E on Firefox
         uses: cypress-io/github-action@v5
         with:
@@ -103,29 +113,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Create temporary .npmrc
-        run: |
-          echo "@kaltura:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=\${GIT_TOKEN}" >> .npmrc
       - name: Preinstall
         run: npx --yes --prefer-online --registry=https://npm.pkg.github.com --package @kaltura/kaltura-tools@latest kaltura-tools check --root=.
         env:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Remove temporary .npmrc
-        run: rm -f .npmrc
-      - name: Disable preinstall
-        working-directory: ${{ github.workspace }}
-        run: |
-          sed -i.bak 's/"preinstall":/"disabled-preinstall":/' package.json
-          rm package.json.bak
-
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Setup JFrog
+        uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog
+        env:
+          JF_URL: https://kalturaa.jfrog.io
+        with:
+          oidc-provider-name: ovp-github-oidc
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
           runTests: false
+          install-command: npm ci --verbose
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: Build
         run: yarn run test:prepare
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KALTURA_JFROG_TOKEN: ${{ steps.setup-jfrog.outputs.oidc-token }}
       - name: E2E on Edge
         uses: cypress-io/github-action@v5
         with:

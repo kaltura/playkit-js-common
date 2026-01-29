@@ -9,7 +9,7 @@ on:
         description: "schema-type - example: 'playerV3Versions/playerV3OvpVersions'"
         required: true
         type: string
-      tests-yarn-run-to-execute:
+      tests-npm-run-to-execute:
         description: "list of package.json scripts - example: 'eslint flow test'"
         required: true
         type: string
@@ -24,7 +24,7 @@ jobs:
     uses: ./.github/workflows/set_stage_variable.yaml
   canary:
     needs: set_stage
-    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@master
+    uses: kaltura/ovp-pipelines-pub/.github/workflows/player_cicd.yaml@jfrog-migration-test
     secrets:
       PLAYER_CENTRAL_ACCOUNT_ID: ${{ secrets.PLAYER_CENTRAL_ACCOUNT_ID }}
       PLAYER_SERVICES_ACCOUNT_ID: ${{ secrets.PLAYER_SERVICES_ACCOUNT_ID }}
@@ -40,6 +40,6 @@ jobs:
       stage: ${{ needs.set_stage.outputs.stage }}
       node-version: ${{ inputs.node-version }}
       schema-type: ${{ inputs.schema-type }}
-      tests-yarn-run-to-execute: ${{ inputs.tests-yarn-run-to-execute }}
+      tests-npm-run-to-execute: ${{ inputs.tests-npm-run-to-execute }}
 
 
