@@ -14,6 +14,8 @@ interface A11yWrapperProps {
   onRightKeyPressed?: (e: KeyboardEvent) => void;
   role?: string | null;
   type?: string;
+  onFocus?: (e: FocusEvent) => void;
+  onBlur?: (e: FocusEvent) => void;
 }
 
 const stopEvent = (e: KeyboardEvent) => {
@@ -42,10 +44,24 @@ export const A11yWrapper = ({
   onLeftKeyPressed,
   onRightKeyPressed,
   role,
-  type
+  type,
+  onFocus,
+  onBlur
 }: A11yWrapperProps) => {
+  const childProps = ((children as VNode)?.props || {}) as Record<string, unknown>;
+  const childOnKeyDown = childProps.onKeyDown as ((e: KeyboardEvent) => void) | undefined;
+  const childOnClick = childProps.onClick as ((e: MouseEvent) => void) | undefined;
+  const childOnFocus = childProps.onFocus as ((e: FocusEvent) => void) | undefined;
+  const childOnBlur = childProps.onBlur as ((e: FocusEvent) => void) | undefined;
+
   const props: Record<string, unknown> = {
     onKeyDown: (e: KeyboardEvent) => {
+      if (childOnKeyDown) {
+        childOnKeyDown(e);
+      }
+      if (e.defaultPrevented) {
+        return;
+      }
       if (e.keyCode === SPACE || e.keyCode === ENTER) {
         stopEvent(e);
         onClick(e, true);
@@ -64,7 +80,29 @@ export const A11yWrapper = ({
       }
     },
     onClick: (e: MouseEvent) => {
+      if (childOnClick) {
+        childOnClick(e);
+      }
+      if (e.defaultPrevented) {
+        return;
+      }
       onClick(e, isKeyboardEvent(e));
+    },
+    onFocus: (e: FocusEvent) => {
+      if (onFocus) {
+        onFocus(e);
+      }
+      if (childOnFocus) {
+        childOnFocus(e);
+      }
+    },
+    onBlur: (e: FocusEvent) => {
+      if (onBlur) {
+        onBlur(e);
+      }
+      if (childOnBlur) {
+        childOnBlur(e);
+      }
     }
   };
   if ((children as VNode)?.type === 'button') {
